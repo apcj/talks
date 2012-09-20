@@ -1,0 +1,199 @@
+
+var actionsOnEnter = {};
+var actionsOnReverse = {};
+var actionsOnExit = {};
+
+function step(id) {
+    var stepBuilder = {};
+    stepBuilder.onEnter = function(action) {
+        actionsOnEnter[id] = action;
+        return stepBuilder;
+    }
+    stepBuilder.onReverse = function(action) {
+        actionsOnReverse[id] = action;
+        return stepBuilder;
+    }
+    stepBuilder.onExit = function(action) {
+        actionsOnExit[id] = action;
+        return stepBuilder;
+    }
+    return stepBuilder;
+}
+
+(function() {
+    var friendGraph = d3.select("figure.recommend-a-friend");
+    
+    function friendStep(stepId, cssClass, colour) {
+        step(stepId)
+            .onEnter(function() {
+                friendGraph.selectAll("." + cssClass)
+                    .style("visibility", "visible");
+
+                friendGraph.selectAll("path." + cssClass)
+                    .style("fill", colour);
+                friendGraph.selectAll("circle." + cssClass)
+                    .style("stroke", colour);
+            }).onReverse(function() {
+                friendGraph.selectAll("." + cssClass)
+                    .style("visibility", "hidden");
+
+                friendGraph.selectAll("path." + cssClass)
+                    .style("fill", "null");
+                friendGraph.selectAll("circle." + cssClass)
+                    .style("stroke", "null");
+            });
+    }
+
+    friendStep("recommend-a-friend-me", "me", "green");
+    friendStep("recommend-a-friend-fiends", "friend", "blue");
+    friendStep("recommend-a-friend-fiends-know-friends", "friend-internal", "grey");
+    friendStep("recommend-a-friend-fiends-other-friends", "friend-of-friend", "grey");
+    friendStep("recommend-a-friend-fiends-significant", "significant", "white");
+
+    step("recommend-a-friend-fiends-recommended")
+        .onEnter(function() {
+            friendGraph.selectAll("." + "friend-of-friend")
+                .style("visibility", "hidden");
+            friendGraph.selectAll("." + "friend-internal")
+                .style("visibility", "hidden");
+            friendGraph.selectAll("." + "recommended")
+                .style("visibility", "visible");
+
+            friendGraph.selectAll("path." + "recommended")
+                .style("fill", "yellow");
+            friendGraph.selectAll("circle." + "recommended")
+                .style("stroke", "yellow");
+        }).onReverse(function() {
+            friendGraph.selectAll("." + "friend-of-friend")
+                .style("visibility", "visible");
+            friendGraph.selectAll("." + "friend-internal")
+                .style("visibility", "visible");
+            friendGraph.selectAll("." + "recommended")
+                .style("visibility", "hidden");
+
+            friendGraph.selectAll("path." + "recommended")
+                .style("fill", "null");
+            friendGraph.selectAll("circle." + "recommended")
+                .style("stroke", "null");
+        });
+})();
+
+(function() {
+    var shortestPathGraph = d3.select("figure.shortest-path");
+
+    step("shortest-path-start-and-end").onEnter(function() {
+        shortestPathGraph.selectAll(".start-or-end")
+            .style("stroke", "yellow");
+    }).onReverse(function() {
+        shortestPathGraph.selectAll(".start-or-end")
+            .style("stroke", null);
+    });
+    step("shortest-path-path").onEnter(function() {
+        shortestPathGraph.selectAll("circle.shortest-path")
+            .style("stroke", "yellow");
+        shortestPathGraph.selectAll("path.shortest-path")
+            .style("fill", "yellow");
+    }).onReverse(function() {
+        shortestPathGraph.selectAll("circle.shortest-path")
+            .style("stroke", null);
+        shortestPathGraph.selectAll("path.shortest-path")
+            .style("fill", null);
+    });
+})();
+
+(function() {
+    var model;
+    var view = d3.select("svg.linear-traversal");
+    var running = false;
+    var nodeDistance = 500;
+    var interval = 2000;
+    var nodes;
+
+    step("linear-traversal-show-nodes").onEnter(function() {
+        model = gd.model();
+        var lastNode;
+        for (var i = 0; i < 3; i++) {
+            var newNode = model.createNode().x(nodeDistance * (i - 1)).y(0);
+            if (lastNode) {
+                model.createRelationship(lastNode, newNode);
+            }
+            lastNode = newNode;
+        }
+        bind(model, view);
+    }).onReverse(function() {
+        model = gd.model();
+        bind(model, view);
+    });
+    step("linear-traversal-continuous").onEnter(function() {
+        model = gd.model();
+        nodes = [];
+        var lastNode;
+        for (var i = 0; i < 5; i++) {
+            var newNode = model.createNode().x(nodeDistance * (i - 2)).y(0);
+            if (lastNode) {
+                model.createRelationship(lastNode, newNode);
+            }
+            lastNode = newNode;
+            nodes.push(newNode);
+        }
+        bind(model, view);
+        console.log(interval);
+        running = true;
+        d3.timer(function(elapsed) {
+            for (var i = 0; i < nodes.length; i++) {
+                nodes[i].x(-(elapsed % interval) * nodeDistance / interval + nodeDistance * (i - 2));
+            }
+            bind(model, view);
+            return !running;
+        });
+    }).onReverse(function() {
+        running = false;
+    });
+    step("linear-traversal-faster").onEnter(function() {
+        interval = 500;
+    });
+    step("linear-traversal-fastest").onEnter(function() {
+        interval = 100;
+    }).onReverse(function() {
+        interval = 500;
+    }).onExit(function() {
+        if (interval == 100) {
+            running = false;
+        }
+    });
+})();
+
+$(function() {
+    function callIfDefined(action) {
+        if (action) action();
+    }
+
+    $.deck('.slide');
+    $(document).bind('deck.change', function(e, from, to) {
+        var fromId = $.deck('getSlide', from).attr("id");
+        var toId = $.deck('getSlide', to).attr("id");
+
+        if (from > to) {
+            callIfDefined(actionsOnReverse[fromId]);
+        }
+        callIfDefined(actionsOnExit[fromId]);
+        callIfDefined(actionsOnEnter[toId]);
+    });
+});
+
+d3.selectAll("figure.graph-diagram").each(function() {
+    var graph = gd.markup.parse(d3.select(this).select("ul.graph-diagram-markup"));
+
+    var diagramView = d3.select(this).selectAll("svg.graph-diagram").data([graph]);
+
+    diagramView
+        .enter()
+        .append("svg:svg")
+        .attr("class", "graph-diagram");
+
+    bind(graph, diagramView);
+
+    if (!diagramView.classed("pre-sized")) {
+        gd.scaling.sizeSvgToFitDiagram(graph, diagramView);
+    }
+});
