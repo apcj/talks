@@ -67,6 +67,22 @@ function step(id) {
 })();
 
 (function() {
+    var intersectionGraph = d3.select("figure.intersection");
+
+    step("show-intersection").onEnter(function() {
+        intersectionGraph.selectAll("circle.intersection")
+            .style("visibility", "visible");
+        intersectionGraph.selectAll("path.intersection")
+            .style("visibility", "visible");
+    }).onReverse(function() {
+        intersectionGraph.selectAll("circle.intersection")
+            .style("visibility", null);
+            intersectionGraph.selectAll("path.intersection")
+                .style("visibility", null);
+        });
+})();
+
+(function() {
     var model;
     var view = d3.select("svg.linear-traversal");
     var running = false;

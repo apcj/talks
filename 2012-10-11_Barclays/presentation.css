@@ -96,3 +96,13 @@ table.relational-table th {
 .recommend-a-friend circle, .recommend-a-friend path {
     visibility: hidden;
 }
+
+circle.intersection {
+    visibility: hidden;
+    stroke: yellow;
+}
+
+path.intersection {
+    visibility: hidden;
+    fill: yellow;
+}
