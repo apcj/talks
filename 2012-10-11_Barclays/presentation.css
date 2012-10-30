@@ -1,5 +1,10 @@
+@media screen {
+    body {
+        background-color: black;
+    }
+}
+
 body {
-    background-color: black;
     color: white;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 35px;
