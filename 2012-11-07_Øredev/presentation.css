@@ -138,3 +138,17 @@ path.intersection {
     visibility: hidden;
     fill: yellow;
 }
+
+.corporate-structure .graph-diagram-bound-variable,
+.corporate-structure .graph-diagram-bound-variable-shadow {
+    font-family: monospace;
+    font-size: 40px;
+}
+
+.corporate-structure .graph-diagram-bound-variable {
+    fill: #a7ff5e;
+}
+
+.corporate-structure .graph-diagram-relationship-label {
+    font-size: 40px;
+}
