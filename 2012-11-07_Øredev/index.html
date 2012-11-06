@@ -7,6 +7,7 @@
 	<link rel="stylesheet" media="print" href="print-core.css" type="text/css">
 	<link rel="stylesheet" href="lib/arrows/graph-diagram-inverted.css" type="text/css">
 	<link rel="stylesheet" href="presentation.css" type="text/css">
+  <link rel="stylesheet" href="lib/prettify/sunburst.css" type="text/css"/>
 
 	<script src="lib/deck.js/modernizr.custom.js"></script>
 
@@ -16,6 +17,9 @@
 
   <script src="lib/arrows/graph-diagram.js"></script>
   <script src="lib/d3/d3.v2.js"></script>
+
+  <script type="text/javascript" src="lib/prettify/prettify.js"></script>
+
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -91,6 +95,10 @@
 </section>
 
 <section class="slide">
+  <img style="width: 100%" src="images/post.png">
+</section>
+
+<section class="slide">
   <div class="center-outer">
     <div class="center-inner">
       <h1>DENORMALISE</h1>
@@ -99,11 +107,129 @@
 </section>
 
 <section class="slide">
-  <img style="width: 100%" src="images/post.png">
+  <img style="width: 100%" src="images/post_left.png">
+</section>
+
+
+<section class="slide">
+  <img style="width: 100%" src="images/shopping_cart.png">
 </section>
 
 <section class="slide">
-  <img style="width: 100%" src="images/post_left.png">
+  <pre class="prettyprint">
+{
+  "customer": {
+    "customer_id": "47965d1e-7101-4184-8a0f-be75fb59710f"
+  },
+  "delivery": {
+    "name": "Alistair Jones",
+    "address": {
+      "country": "United Kingdom"
+    }
+  },
+  "items": [
+    {
+      "product_type": "Book",
+      "title": "NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence",
+      "creator": "Pramod J. Sadalage",
+      "price": { "amount": 16.19, "currency": "GBP" }
+    },
+    {
+      "product_type": "Book",
+      "title": "Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement",
+      "creator": "Eric Redmond",
+      "price": { "amount": 18.89, "currency": "GBP" }
+    },
+    {
+      "product_type": "Book",
+      "title": "Spring Data",
+      "creator": "Mark Pollack",
+      "price": { "amount": 16.09, "currency": "GBP" }
+    }
+  ]
+}
+  </pre>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <table class="relational-table">
+        <caption>Books</caption>
+        <tr>
+          <th>book_id</th>
+          <th>title</th>
+          <th>author</th>
+        </tr>
+        <tr>
+          <td>2343234</td>
+          <td>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</td>
+          <td>Pramod J. Sadalage</td>
+        </tr>
+        <tr>
+          <td>87872454</td>
+          <td>Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement</td>
+          <td>Eric Redmond</td>
+        </tr>
+        <tr>
+          <td>4147773</td>
+          <td>Spring Data</td>
+          <td>Mark Pollack</td>
+        </tr>
+      </table>
+      <table class="relational-table">
+        <caption>Customers</caption>
+        <tr>
+          <th>customer_id</th>
+          <th>name</th>
+          <th>email</th>
+        </tr>
+        <tr>
+          <td>1023</td>
+          <td>Alistair Jones</td>
+          <td>alistair.jones@neotechnology.com</td>
+        </tr>
+      </table>
+      <table class="relational-table">
+        <caption>Orders</caption>
+        <tr>
+          <th>order_id</th>
+          <th>customer_id</th>
+        </tr>
+        <tr>
+          <td>48576</td>
+          <td>1023</td>
+        </tr>
+      </table>
+      <table class="relational-table">
+        <caption>Order Items</caption>
+        <tr>
+          <th>order_id</th>
+          <th>item_index</th>
+          <th>book_id</th>
+          <th>quantity</th>
+        </tr>
+        <tr>
+          <td>48576</td>
+          <td>1</td>
+          <td>2343234</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>48576</td>
+          <td>2</td>
+          <td>87872454</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>48576</td>
+          <td>3</td>
+          <td>4147773</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </section>
 
 <section class="slide">

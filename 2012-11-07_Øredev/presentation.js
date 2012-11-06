@@ -1,3 +1,4 @@
+prettyPrint();
 
 var actionsOnEnter = {};
 var actionsOnReverse = {};

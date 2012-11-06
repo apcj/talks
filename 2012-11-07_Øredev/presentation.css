@@ -82,6 +82,11 @@ ul li {
     margin: 30px;
 }
 
+pre {
+    text-align: left;
+    font-size: 15px;
+}
+
 table.relational-table {
     display: inline-table;
     margin: 20px;
