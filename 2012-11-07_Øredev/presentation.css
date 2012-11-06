@@ -82,6 +82,16 @@ ul li {
     margin: 30px;
 }
 
+li.database-category {
+    display: inline-block;
+    width: 400px;
+    margin: 50px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 10px;
+    font-size: 50px;
+}
+
 pre.prettyprint {
     text-align: left;
     font-size: 17px;

@@ -22,6 +22,20 @@ function step(id) {
 }
 
 (function() {
+    var aggregateCategories = d3.selectAll("li.database-category.aggregate");
+
+    step("highlight-aggregate-database-categories").onEnter(function() {
+        aggregateCategories
+            .style("color", "yellow")
+            .style("border-color", "yellow");
+    }).onReverse(function() {
+        aggregateCategories
+            .style("color", null)
+            .style("border-color", null);
+    });
+})();
+
+(function() {
     var shortestPathGraph = d3.select("figure.shortest-path");
 
     step("shortest-path-start-and-end").onEnter(function() {
