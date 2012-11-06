@@ -110,99 +110,102 @@
   <img style="width: 100%" src="images/post_left.png">
 </section>
 
-
-<section class="slide">
-  <img style="width: 100%" src="images/shopping_cart.png">
+<section class="slide" style="background-color: white">
+  <img style="height: 100%" src="images/shopping_cart.png">
 </section>
 
 <section class="slide">
-  <pre class="prettyprint">
+  <div class="center-outer">
+    <div class="center-inner">
+      <pre class="prettyprint" style="margin-left: 100px; width: 600px;">
 {
-  "customer": {
-    "customer_id": "47965d1e-7101-4184-8a0f-be75fb59710f"
+  customer: {
+    customer_id: "47965d1e-7101-4184-8a0f-be75fb59710f"
   },
-  "delivery": {
-    "name": "Alistair Jones",
-    "address": {
-      "country": "United Kingdom"
+  delivery: {
+    name: "Alistair Jones",
+    address: {
+      country: "United Kingdom"
     }
   },
-  "items": [
+  items: [
     {
-      "product_type": "Book",
-      "title": "NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence",
-      "creator": "Pramod J. Sadalage",
-      "price": { "amount": 16.19, "currency": "GBP" }
+      product_type: "Book",
+      title: "NoSQL Distilled",
+      creator: "Pramod J. Sadalage",
+      price: { amount: 16.19, currency: "GBP" }
     },
     {
-      "product_type": "Book",
-      "title": "Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement",
-      "creator": "Eric Redmond",
-      "price": { "amount": 18.89, "currency": "GBP" }
+      product_type: "Book",
+      title: "Seven Databases in Seven Weeks",
+      creator: "Eric Redmond",
+      price: { amount: 18.89, currency: "GBP" }
     },
     {
-      "product_type": "Book",
-      "title": "Spring Data",
-      "creator": "Mark Pollack",
-      "price": { "amount": 16.09, "currency": "GBP" }
+      product_type: "Book",
+      title: "Spring Data",
+      creator: "Mark Pollack",
+      price: { amount: 16.09, currency: "GBP" }
     }
   ]
 }
-  </pre>
+      </pre>
+    </div>
+  </div>
 </section>
 
 <section class="slide">
   <div class="center-outer">
     <div class="center-inner">
       <table class="relational-table">
-        <caption>Books</caption>
+        <caption>books</caption>
         <tr>
           <th>book_id</th>
           <th>title</th>
           <th>author</th>
         </tr>
         <tr>
-          <td>2343234</td>
-          <td>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</td>
+          <td class="number">2343234</td>
+          <td>NoSQL Distilled</td>
           <td>Pramod J. Sadalage</td>
         </tr>
         <tr>
-          <td>87872454</td>
-          <td>Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement</td>
+          <td class="number">87872454</td>
+          <td>Seven Databases in Seven Weeks</td>
           <td>Eric Redmond</td>
         </tr>
         <tr>
-          <td>4147773</td>
+          <td class="number">4147773</td>
           <td>Spring Data</td>
           <td>Mark Pollack</td>
         </tr>
       </table>
       <table class="relational-table">
-        <caption>Customers</caption>
+        <caption>customers</caption>
         <tr>
           <th>customer_id</th>
           <th>name</th>
           <th>email</th>
         </tr>
         <tr>
-          <td>1023</td>
+          <td class="number">1023</td>
           <td>Alistair Jones</td>
           <td>alistair.jones@neotechnology.com</td>
         </tr>
       </table>
       <table class="relational-table">
-        <caption>Orders</caption>
+        <caption>orders</caption>
         <tr>
           <th>order_id</th>
           <th>customer_id</th>
         </tr>
         <tr>
-          <td>48576</td>
-          <td>1023</td>
+          <td class="number">48576</td>
+          <td class="number">1023</td>
         </tr>
       </table>
       <table class="relational-table">
-        <caption>Order Items</caption>
+        <caption>order_items</caption>
         <tr>
           <th>order_id</th>
           <th>item_index</th>
@@ -210,22 +213,49 @@
           <th>quantity</th>
         </tr>
         <tr>
-          <td>48576</td>
-          <td>1</td>
-          <td>2343234</td>
-          <td>1</td>
+          <td class="number">48576</td>
+          <td class="number">1</td>
+          <td class="number">2343234</td>
+          <td class="number">1</td>
         </tr>
         <tr>
-          <td>48576</td>
-          <td>2</td>
-          <td>87872454</td>
-          <td>1</td>
+          <td class="number">48576</td>
+          <td class="number">2</td>
+          <td class="number">87872454</td>
+          <td class="number">1</td>
         </tr>
         <tr>
-          <td>48576</td>
-          <td>3</td>
-          <td>4147773</td>
-          <td>1</td>
+          <td class="number">48576</td>
+          <td class="number">3</td>
+          <td class="number">4147773</td>
+          <td class="number">1</td>
+        </tr>
+      </table>
+      <table class="relational-table">
+        <caption>book_price</caption>
+        <tr>
+          <th>price_scheme_id</th>
+          <th>book_id</th>
+          <th>price</th>
+          <th>currency</th>
+        </tr>
+        <tr>
+          <td class="number">12</td>
+          <td class="number">2343234</td>
+          <td class="number">16.19</td>
+          <td>GBP</td>
+        </tr>
+        <tr>
+          <td class="number">12</td>
+          <td class="number">87872454</td>
+          <td class="number">18.89</td>
+          <td>GBP</td>
+        </tr>
+        <tr>
+          <td class="number">12</td>
+          <td class="number">4147773</td>
+          <td class="number">16.09</td>
+          <td>GBP</td>
         </tr>
       </table>
     </div>
@@ -687,76 +717,78 @@
   <div class="center-outer">
     <div class="center-inner">
       <table class="relational-table">
+        <caption>departments</caption>
         <tr>
           <th>dept_id</th>
           <th>dept_name</th>
           <th>parent_dept_id</th>
         </tr>
         <tr>
-          <td>1</td>
+          <td class="number">1</td>
           <td>ACME Corp</td>
-          <td>null</td>
+          <td class="number">null</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td class="number">2</td>
           <td>Widgets</td>
-          <td>1</td>
+          <td class="number">1</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td class="number">3</td>
           <td>Corporate</td>
-          <td>1</td>
+          <td class="number">1</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td class="number">4</td>
           <td>Widget marketing</td>
-          <td>2</td>
+          <td class="number">2</td>
         </tr>
         <tr>
-          <td>5</td>
+          <td class="number">5</td>
           <td>Widget engineering</td>
-          <td>2</td>
+          <td class="number">2</td>
         </tr>
       </table>
       <table class="relational-table">
+        <caption>employees</caption>
         <tr>
           <th>employee_id</th>
           <th>dept_id</th>
           <th>employee_name</th>
         </tr>
         <tr>
-          <td>1</td>
-          <td>1</td>
+          <td class="number">1</td>
+          <td class="number">1</td>
           <td>John</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>2</td>
+          <td class="number">2</td>
+          <td class="number">2</td>
           <td>Mary</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>3</td>
+          <td class="number">3</td>
+          <td class="number">3</td>
           <td>Steve</td>
         </tr>
         <tr>
-          <td>4</td>
-          <td>3</td>
+          <td class="number">4</td>
+          <td class="number">3</td>
           <td>James</td>
         </tr>
         <tr>
-          <td>5</td>
-          <td>4</td>
+          <td class="number">5</td>
+          <td class="number">4</td>
           <td>David</td>
         </tr>
         <tr>
-          <td>6</td>
-          <td>4</td>
+          <td class="number">6</td>
+          <td class="number">4</td>
           <td>Liz</td>
         </tr>
         <tr>
-          <td>7</td>
-          <td>5</td>
+          <td class="number">7</td>
+          <td class="number">5</td>
           <td>Dan</td>
         </tr>
       </table>
