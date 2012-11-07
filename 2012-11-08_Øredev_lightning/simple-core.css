@@ -1,0 +1,30 @@
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+section.slide {
+    display: none;
+    height: 100%;
+    text-align: center;
+}
+
+section.slide.deck-current, section.deck-child-current {
+    display: block;
+}
+
+li.slide, p.slide {
+    visibility: hidden;
+}
+
+li.slide.deck-current, li.slide.deck-previous, li.slide.deck-before,
+p.slide.deck-current, p.slide.deck-previous, p.slide.deck-before {
+    visibility: visible;
+}
+
+li.slide.deck-current {
+    color: yellow;
+}
