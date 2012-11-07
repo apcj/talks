@@ -66,15 +66,21 @@ div.center-inner {
 }
 
 .top-left-corner {
+    text-align: left;
     position: absolute;
-    left: 50px;
+    left: 20px;
     top: 0;
+    margin: 0px;
+    font-size: 30px;
 }
 
 .top-right-corner {
+    text-align: right;
     position: absolute;
-    right: 50px;
+    right: 20px;
     top: 0;
+    margin: 0px;
+    font-size: 30px;
 }
 
 ul li {
