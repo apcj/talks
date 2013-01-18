@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+	<meta charset="utf-8">
+	<title>NOSQL Exchange 2012</title>
+	<link rel="stylesheet" media="screen" href="simple-core.css" type="text/css">
+	<link rel="stylesheet" media="print" href="print-core.css" type="text/css">
+	<link rel="stylesheet" href="lib/arrows/graph-diagram-inverted.css" type="text/css">
+	<link rel="stylesheet" href="presentation.css" type="text/css">
+  <link rel="stylesheet" href="lib/prettify/sunburst.css" type="text/css"/>
+
+	<script src="lib/deck.js/modernizr.custom.js"></script>
+
+  <script src="lib/deck.js/jquery-1.7.2.min.js"></script>
+  <script src="lib/deck.js/core/deck.core.js"></script>
+  <script src="lib/deck.js/extensions/hash/deck.hash.js"></script>
+
+  <script src="lib/arrows/graph-diagram.js"></script>
+  <script src="lib/d3/d3.v2.js"></script>
+
+  <script type="text/javascript" src="lib/prettify/prettify.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9292365-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<section class="slide">
+  <h2 style="margin-top: 50px;">NOSQL Exchange 2012</h2>
+  <h1 style="margin-top: 50px;">NOSQL at the crossroads</h1>
+  <h2 style="position: absolute; right: 50px; bottom: 150px">Alistair Jones</h2>
+  <img src="images/neo_technology_logo.svg" width="300px" style="position: absolute; right: 50px; bottom: 50px">
+  <img src="images/neo-transparent-tag.svg" width="450px" style="position: absolute; left: 50px; bottom: 50px">
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>How do graphs fit into NOSQL?</h1>
+      <h1>Why Neo4j?</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>NOSQL</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <img style="height: 100%" src="images/globe_west_2048.jpeg">
+  <h3 class="concern">[ scale ]</h3>
+  <p class="source-note">source: <a href="http://visibleearth.nasa.gov/view.php?id=57723">NASA</a></p>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <img src="images/Progress.gif">
+      <p>Buffering...</p>
+    </div>
+  </div>
+  <h3 class="concern">[ performance ]</h3>
+</section>
+
+<section class="slide">
+  <img style="width: 100%" src="images/ERD-inverted.png">
+  <h3 class="concern">[ simplicity ]</h3>
+  <p class="source-note">source: <a href="http://community.rightnow.com/customer/documentation/7.x/supplemental/schema/MImage.html">RightNow community documentation</a></p>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>NOSQL</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <ul>
+        <li class="database-category aggregate">Key-Value</li>
+        <li class="database-category aggregate">Document</li>
+        <li class="database-category aggregate">Column-Family</li>
+        <li class="database-category">Graph</li>
+      </ul>
+      <div class="animation-steps">
+        <ul>
+          <li class="slide" id="highlight-aggregate-database-categories">Aggregates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>AGGREGATE</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>DENORMALISE</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <img style="width: 100%" src="images/post.png">
+</section>
+
+<section class="slide">
+  <img style="width: 100%" src="images/post_left.png">
+</section>
+
+<section class="slide">
+  <img style="width: 100%" src="images/post_both.png">
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h2 class="top-left-corner">graph model</h2>
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="graph-diagram-node" data-node-id="0" data-x="50" data-y="0">
+            <span class="graph-diagram-in-node-caption">N</span>
+          </li>
+          <li class="graph-diagram-node" data-node-id="1" data-x="380" data-y="-200">
+            <span class="graph-diagram-in-node-caption">N</span>
+          </li>
+          <li class="graph-diagram-node" data-node-id="2" data-x="380" data-y="200">
+            <span class="graph-diagram-in-node-caption">N</span>
+          </li>
+          <li class="graph-diagram-relationship" data-from="0" data-to="1">
+            <span class="graph-diagram-relationship-type">R</span>
+          </li>
+          <li class="graph-diagram-relationship" data-from="1" data-to="2">
+            <span class="graph-diagram-relationship-type">R</span>
+          </li>
+          <li class="graph-diagram-relationship" data-from="0" data-to="2">
+            <span class="graph-diagram-relationship-type">R</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2 class="top-left-corner">flexible model</h2>
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" width="100%" height="500" viewBox="-150 -300 700 600"></svg>
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="graph-diagram-node" data-node-id="0" data-x="-50" data-y="0">
+            <span class="graph-diagram-in-node-caption">Alistair</span>
+          </li>
+          <li class="graph-diagram-node" data-node-id="1" data-x="450" data-y="200">
+            <span class="graph-diagram-in-node-caption">London</span>
+          </li>
+          <li class="graph-diagram-node" data-node-id="2" data-x="450" data-y="-200">
+            <span class="graph-diagram-in-node-caption">Neo4j</span>
+          </li>
+          <li class="graph-diagram-relationship" data-from="0" data-to="1">
+            <span class="graph-diagram-relationship-type">lives in</span>
+          </li>
+          <li class="graph-diagram-relationship" data-from="0" data-to="2">
+            <span class="graph-diagram-relationship-type">develops</span>
+          </li>
+        </ul>
+      </figure>
+      <ul>
+        <li class="slide">Schema-free</li>
+        <li class="slide">Relate anything to anything</li>
+        <li class="slide">Store any property anywhere</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h2>flexibility with data quality</h2>
+      <figure>
+        <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="150" width="800" viewBox="100 150 800 150">
+          <text fill="black" y="212" id="svg_5" x="584.64706" class="graph-diagram-bound-variable undefined">?</text>
+          <circle cy="212" fill="black" id="svg_1" cx="177" r="50" class="graph-diagram-node graph-diagram-node-id-0 undefined"></circle>
+          <g id="svg_3" class="graph-diagram-relationship undefined">
+            <path id="svg_4" d="m242,216l290,0l0,11l30,-15l-30,-15l0,11l-290,0l0,8z" class="graph-diagram-relationship undefined"></path>
+          </g>
+          <text transform="matrix(0.717647 0 0 0.717647 179.859 67.7647)" id="svg_7" fill="black" y="192.06176" x="821.60078" class="graph-diagram-bound-variable undefined">(can't happen)</text>
+        </svg>
+      </figure>
+      <ul>
+        <li class="slide">Prevents dangling relationships</li>
+        <li class="slide">=> referential integrity is <em>automatic</em></li>
+        <li class="slide">ACID transactions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2 class="top-left-corner" style="width: 200px">shortest path</h2>
+  <figure class="graph-diagram shortest-path">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" preserveAspectRatio="xMidYMid slice" viewBox="-200.6061513423921 -705.2453613281247 1761.7085072994232 1407.2476501464835"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.33" data-external-scale="1">
+      <li class="graph-diagram-node shortest-path start-or-end" data-node-id="0" data-x="0" data-y="0"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="1" data-x="142.06070290472272" data-y="-151.87272380169173"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="2" data-x="277.68091187441263" data-y="-9.015580944548853"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="3" data-x="421.6729415090458" data-y="-159.282850681391"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="4" data-x="565.3157399113018" data-y="-20.936986019736846"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="5" data-x="721.1004959909535" data-y="-164.78344910126881"></li>
+      <li class="graph-diagram-node shortest-path" data-node-id="6" data-x="858.4577746857384" data-y="-12.151870153900425"></li>
+      <li class="graph-diagram-node shortest-path start-or-end" data-node-id="7" data-x="1000.4272919848454" data-y="-185.2251784245772"></li>
+      <li class="graph-diagram-node" data-node-id="8" data-x="1157.854490351856" data-y="-18.307885191494346"></li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="147.60572390448775" data-y="152.01767082501178"></li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="426.96987524964896" data-y="137.7096305216166"></li>
+      <li class="graph-diagram-node" data-node-id="11" data-x="712.5931130316034" data-y="153.50773173167298"></li>
+      <li class="graph-diagram-node" data-node-id="12" data-x="1010.4860692992247" data-y="139.58685165061095"></li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="287.838332097333" data-y="-304.75495990953954"></li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="563.9576388480981" data-y="-315.62472465343035"></li>
+      <li class="graph-diagram-node" data-node-id="15" data-x="874.1115025111617" data-y="-328.88385514567676"></li>
+      <li class="graph-diagram-node" data-node-id="16" data-x="292.7871130462872" data-y="310.9402534656959"></li>
+      <li class="graph-diagram-node" data-node-id="17" data-x="577.1857469601748" data-y="301.4464873120301"></li>
+      <li class="graph-diagram-node" data-node-id="18" data-x="868.8827629376187" data-y="321.4577581649433"></li>
+      <li class="graph-diagram-node" data-node-id="19" data-x="732.1144505551011" data-y="484.2122472318487"></li>
+      <li class="graph-diagram-node" data-node-id="20" data-x="436.93957794877923" data-y="466.50863303277725"></li>
+      <li class="graph-diagram-node" data-node-id="21" data-x="146.30342641271116" data-y="460.2052846349273"></li>
+      <li class="graph-diagram-node" data-node-id="22" data-x="3.528193423622233" data-y="308.15895482113547"></li>
+      <li class="graph-diagram-node" data-node-id="23" data-x="-159.85424912961807" data-y="148.33789768075573"></li>
+      <li class="graph-diagram-node" data-node-id="24" data-x="-9.985647703471981" data-y="-305.77329477869444"></li>
+      <li class="graph-diagram-node" data-node-id="25" data-x="-158.32355470585637" data-y="-135.18470247885332"></li>
+      <li class="graph-diagram-node" data-node-id="26" data-x="-132.89125019446382" data-y="466.87431622268616"></li>
+      <li class="graph-diagram-node" data-node-id="27" data-x="1182.783726283482" data-y="290.90016300516913"></li>
+      <li class="graph-diagram-node" data-node-id="28" data-x="1039.0362044026047" data-y="467.74760081355726"></li>
+      <li class="graph-diagram-node" data-node-id="29" data-x="145.79828377056845" data-y="-486.19881536727536"></li>
+      <li class="graph-diagram-node" data-node-id="30" data-x="420.6084746167172" data-y="-482.5318989000823"></li>
+      <li class="graph-diagram-node" data-node-id="31" data-x="725.9821612135819" data-y="-486.65064761513133"></li>
+      <li class="graph-diagram-node" data-node-id="32" data-x="1010.2571645177406" data-y="-484.15738442786653"></li>
+      <li class="graph-diagram-node" data-node-id="33" data-x="1156.5293390948088" data-y="-322.13281617128774"></li>
+      <li class="graph-diagram-node" data-node-id="34" data-x="-158.82699364110047" data-y="-462.13187310928674"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="0" data-to="1"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="1" data-to="2"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="2" data-to="3"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="3" data-to="4"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="4" data-to="5"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="5" data-to="6"></li>
+      <li class="graph-diagram-relationship shortest-path" data-from="6" data-to="7"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="0"></li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="11"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="8" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="6"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="1"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="5"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="16"></li>
+      <li class="graph-diagram-relationship" data-from="16" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="11"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="19"></li>
+      <li class="graph-diagram-relationship" data-from="19" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="20"></li>
+      <li class="graph-diagram-relationship" data-from="20" data-to="16"></li>
+      <li class="graph-diagram-relationship" data-from="16" data-to="21"></li>
+      <li class="graph-diagram-relationship" data-from="21" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="22" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="23"></li>
+      <li class="graph-diagram-relationship" data-from="23" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="24" data-to="25"></li>
+      <li class="graph-diagram-relationship" data-from="25" data-to="0"></li>
+      <li class="graph-diagram-relationship" data-from="22" data-to="26"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="27"></li>
+      <li class="graph-diagram-relationship" data-from="27" data-to="28"></li>
+      <li class="graph-diagram-relationship" data-from="28" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="24" data-to="29"></li>
+      <li class="graph-diagram-relationship" data-from="29" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="30"></li>
+      <li class="graph-diagram-relationship" data-from="30" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="31"></li>
+      <li class="graph-diagram-relationship" data-from="31" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="32"></li>
+      <li class="graph-diagram-relationship" data-from="32" data-to="33"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="33"></li>
+      <li class="graph-diagram-relationship" data-from="34" data-to="24"></li>
+    </ul>
+  </figure>
+  <ul>
+    <li class="slide" id="shortest-path-start-and-end"></li>
+    <li class="slide" id="shortest-path-path"></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2 class="top-left-corner" style="width: 200px">hierarchies</h2>
+  <figure class="graph-diagram hierarchy">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-51903.912986542804 20492.387664174974 1941.359374999949 1851.08398437508"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="2.98" data-external-scale="1">
+      <li class="graph-diagram-node" data-node-id="0" data-x="-17123.578707732522" data-y="6896.103243011737"></li>
+      <li class="graph-diagram-node" data-node-id="1" data-x="-17328.895402363352" data-y="6971.095378078845"></li>
+      <li class="graph-diagram-node" data-node-id="2" data-x="-17122.502522749248" data-y="6987.0015494295185"></li>
+      <li class="graph-diagram-node" data-node-id="3" data-x="-16882.996964863403" data-y="6967.8740326510015"></li>
+      <li class="graph-diagram-node" data-node-id="4" data-x="-17397.957378034498" data-y="7057.033533489918"></li>
+      <li class="graph-diagram-node" data-node-id="5" data-x="-17263.123590282856" data-y="7046.598733783559"></li>
+      <li class="graph-diagram-node" data-node-id="6" data-x="-17200.80186209485" data-y="7075.47745651844"></li>
+      <li class="graph-diagram-node" data-node-id="7" data-x="-17328.895402363345" data-y="7052.974572709727"></li>
+      <li class="graph-diagram-node hierarchy start-node" data-node-id="8" data-x="-17064.82372660835" data-y="7079.816933238247"></li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="-16878.297667464092" data-y="7076.9344353355555"></li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="-16934.337935920415" data-y="7144.512560335563"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="11" data-x="-17111.840295400263" data-y="7200.149095570481"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="12" data-x="-17132.130511423744" data-y="7312.942719731559"></li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="-16815.618084829825" data-y="7141.028395067098"></li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="-17248.095014359882" data-y="7160.226040830531"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="15" data-x="-17027.976516037885" data-y="7197.916110041946"></li>
+      <li class="graph-diagram-node" data-node-id="16" data-x="-16967.22384196069" data-y="7218.673634161068"></li>
+      <li class="graph-diagram-node" data-node-id="17" data-x="-16813.761960668773" data-y="7217.538462181199"></li>
+      <li class="graph-diagram-node" data-node-id="18" data-x="-16889.37149296742" data-y="7216.660211342276"></li>
+      <li class="graph-diagram-node" data-node-id="19" data-x="-17356.7477513566" data-y="7143.578599555365"></li>
+      <li class="graph-diagram-node" data-node-id="20" data-x="-17300.371912430477" data-y="7141.22960626678"></li>
+      <li class="graph-diagram-node" data-node-id="21" data-x="-17163.047562598233" data-y="7162.782799429505"></li>
+      <li class="graph-diagram-node" data-node-id="22" data-x="-17266.77160831961" data-y="7251.014893598995"></li>
+      <li class="graph-diagram-node" data-node-id="23" data-x="-17180.83279749755" data-y="7252.229370318776"></li>
+      <li class="graph-diagram-node" data-node-id="24" data-x="-17223.586572665274" data-y="7251.998010209728"></li>
+      <li class="graph-diagram-node" data-node-id="25" data-x="-17143.305270232453" data-y="7252.588535587232"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="26" data-x="-17093.64346234659" data-y="7312.169334664447"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="27" data-x="-17052.183468638545" data-y="7284.886537894293"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="28" data-x="-17010.899125098273" data-y="7284.668286006713"></li>
+      <li class="graph-diagram-node" data-node-id="29" data-x="-16981.3178016922" data-y="7326.123691837244"></li>
+      <li class="graph-diagram-node" data-node-id="30" data-x="-16940.71377484656" data-y="7324.978688691278"></li>
+      <li class="graph-diagram-node" data-node-id="31" data-x="-16901.116459410383" data-y="7309.948801946303"></li>
+      <li class="graph-diagram-node" data-node-id="32" data-x="-16863.532566792946" data-y="7307.93537912752"></li>
+      <li class="graph-diagram-node" data-node-id="33" data-x="-16824.462201860046" data-y="7306.800207147641"></li>
+      <li class="graph-diagram-node" data-node-id="34" data-x="-16785.420675014382" data-y="7305.457925268452"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="35" data-x="-17107.56701519894" data-y="7398.644271744982"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="36" data-x="-17065.64299045062" data-y="7398.665900310423"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="37" data-x="-17024.238051272765" data-y="7397.333449597336"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="38" data-x="-17148.405679209012" data-y="7396.237602281899"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="39" data-x="-17034.733804209023" data-y="7476.588378288612"></li>
+      <li class="graph-diagram-node hierarchy descendant" data-node-id="40" data-x="-17082.653529460684" data-y="7478.3461907886085"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="1"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="5"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="6"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="7"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="10"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="8" data-to="11"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="11" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="14"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="8" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="16"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="19"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="20"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="21"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="21" data-to="23"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="21" data-to="25"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="11" data-to="26"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="15" data-to="27"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="15" data-to="28"></li>
+      <li class="graph-diagram-relationship" data-from="16" data-to="29"></li>
+      <li class="graph-diagram-relationship" data-from="16" data-to="30"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="31"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="32"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="33"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="34"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="26" data-to="35"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="26" data-to="36"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="26" data-to="37"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="26" data-to="38"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="36" data-to="39"></li>
+      <li class="graph-diagram-relationship hierarchy descendant" data-from="36" data-to="40"></li>
+    </ul>
+  </figure>
+  <ul>
+    <li class="slide" id="hierarchy-start-node"></li>
+    <li class="slide" id="hierarchy-descendants"></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2 class="top-left-corner" style="width: 200px">recommend a friend</h2>
+  <figure class="graph-diagram recommend-a-friend">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-589.1538085937494 -802.6016845703102 1178.2639160156243 884.5465698242172"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.33" data-external-scale="1">
+      <li class="graph-diagram-node me" data-node-id="0" data-x="2.220446049250313e-16" data-y="18.003673123238343"></li>
+      <li class="graph-diagram-node friend" data-node-id="1" data-x="-77.65507518796986" data-y="-258.2452989162358"></li>
+      <li class="graph-diagram-node friend" data-node-id="2" data-x="69.12213088874536" data-y="-261.0574134310386"></li>
+      <li class="graph-diagram-node friend" data-node-id="3" data-x="-246.03597311148948" data-y="-419.008320973331"></li>
+      <li class="graph-diagram-node friend" data-node-id="4" data-x="230.87782322015974" data-y="-423.3082706766891"></li>
+      <li class="graph-diagram-node friend-of-friend significant recommended" data-node-id="5" data-x="-4.4605226445020385" data-y="-559.8508906543685"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="6" data-x="-399.363765859962" data-y="-346.0759901462644"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="7" data-x="-254.3468045112783" data-y="-162.00469741247628"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="8" data-x="257.7555491511982" data-y="-164.06493222803093"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="9" data-x="360.53618237488246" data-y="-290.97744360902146"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="10" data-x="-305.43446935209073" data-y="-540.8128322515257"></li>
+      <li class="graph-diagram-node friend-of-friend" data-node-id="11" data-x="399.33090783599613" data-y="-522.5563909774404"></li>
+      <li class="graph-diagram-relationship friend" data-from="0" data-to="1"></li>
+      <li class="graph-diagram-relationship friend" data-from="0" data-to="2"></li>
+      <li class="graph-diagram-relationship friend" data-from="0" data-to="3"></li>
+      <li class="graph-diagram-relationship friend" data-from="0" data-to="4"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="1" data-to="2"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="2" data-to="4"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="1" data-to="3"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="4" data-to="3"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="2" data-to="3"></li>
+      <li class="graph-diagram-relationship friend-internal" data-from="1" data-to="4"></li>
+      <li class="graph-diagram-relationship friend-of-friend significant" data-from="4" data-to="5"></li>
+      <li class="graph-diagram-relationship friend-of-friend significant" data-from="2" data-to="5"></li>
+      <li class="graph-diagram-relationship friend-of-friend significant" data-from="1" data-to="5"></li>
+      <li class="graph-diagram-relationship friend-of-friend significant" data-from="3" data-to="5"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="3" data-to="6"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="1" data-to="7"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="3" data-to="7"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="2" data-to="8"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="4" data-to="9"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="2" data-to="9"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="3" data-to="10"></li>
+      <li class="graph-diagram-relationship friend-of-friend" data-from="4" data-to="11"></li>
+      <li class="graph-diagram-relationship recommended" data-from="0" data-to="5"></li>
+    </ul>
+  </figure>
+  <ul>
+    <li class="slide" id="recommend-a-friend-me"></li>
+    <li class="slide" id="recommend-a-friend-fiends"></li>
+    <li class="slide" id="recommend-a-friend-fiends-know-friends"></li>
+    <li class="slide" id="recommend-a-friend-fiends-other-friends"></li>
+    <li class="slide" id="recommend-a-friend-fiends-significant"></li>
+    <li class="slide" id="recommend-a-friend-fiends-recommended"></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h1>FAST</h1>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="linear-traversal-show-nodes">
+  <figure>
+    <svg xmlns="http://www.w3.org/2000/svg" class="linear-traversal" viewBox="-750 -250 1500 500" style="width: 100%; height: 100%"></svg>
+  </figure>
+  <ul>
+    <li class="slide" id="linear-traversal-continuous"></li>
+    <li class="slide" id="linear-traversal-faster"></li>
+    <li class="slide" id="linear-traversal-fastest"></li>
+  </ul>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-510.0727307633817 -726.1030782390512 1284.4125057025544 1376.4735876672753"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.28" data-external-scale="0.7">
+      <li class="graph-diagram-node" data-node-id="0" data-x="113.20794677734379" data-y="2.500000000000001"></li>
+      <li class="graph-diagram-node" data-node-id="1" data-x="271.3333333333333" data-y="74"></li>
+      <li class="graph-diagram-node" data-node-id="2" data-x="401.6464029947917" data-y="-30.809814453125032"></li>
+      <li class="graph-diagram-node" data-node-id="3" data-x="249.20793660481772" data-y="-112.16666666666666"></li>
+      <li class="graph-diagram-node" data-node-id="4" data-x="89.39820353190106" data-y="-181.46081542968759"></li>
+      <li class="graph-diagram-node" data-node-id="5" data-x="-52.890523274739536" data-y="-21.499999999999996"></li>
+      <li class="graph-diagram-node" data-node-id="6" data-x="62.54128011067711" data-y="162.83496093750003"></li>
+      <li class="graph-diagram-node" data-node-id="7" data-x="395.20793660481775" data-y="-191.49999999999994"></li>
+      <li class="graph-diagram-node" data-node-id="8" data-x="241.20793660481775" data-y="-283.0274251302084"></li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="64.73153686523438" data-y="-355.9468994140627"></li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="-66.32195027669273" data-y="-199.4608154296875"></li>
+      <li class="graph-diagram-node" data-node-id="11" data-x="-213.96089680989576" data-y="-16.833333333333325"></li>
+      <li class="graph-diagram-node" data-node-id="12" data-x="-108.22385660807284" data-y="131.16666666666669"></li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="1.874613444010444" data-y="301.59501139322924"></li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="199.8746134440104" data-y="242.16829427083331"></li>
+      <li class="graph-diagram-node" data-node-id="15" data-x="374.00002034505206" data-y="195.33333333333334"></li>
+      <li class="graph-diagram-node" data-node-id="16" data-x="-353.18182090889195" data-y="-105.2992118965391"></li>
+      <li class="graph-diagram-node" data-node-id="17" data-x="-204.30979715240548" data-y="-348.7325590927235"></li>
+      <li class="graph-diagram-node" data-node-id="18" data-x="66.19139087983291" data-y="-521.9555298742588"></li>
+      <li class="graph-diagram-node" data-node-id="19" data-x="352.8867687216063" data-y="-412.22450542217945"></li>
+      <li class="graph-diagram-node" data-node-id="20" data-x="539.7885493443249" data-y="-280.3229258739164"></li>
+      <li class="graph-diagram-node" data-node-id="21" data-x="559.6404491712286" data-y="1.6725262829856815"></li>
+      <li class="graph-diagram-node" data-node-id="22" data-x="500.0115555440714" data-y="324.294492698354"></li>
+      <li class="graph-diagram-node" data-node-id="23" data-x="232.1852663508877" data-y="457.7030335215175"></li>
+      <li class="graph-diagram-node" data-node-id="24" data-x="-63.554462521035546" data-y="462.7894604907999"></li>
+      <li class="graph-diagram-node" data-node-id="25" data-x="-269.7771434180637" data-y="232.94524003003352"></li>
+      <li class="graph-diagram-node" data-node-id="26" data-x="-82.47727673013138" data-y="-431.2897583898835"></li>
+      <li class="graph-diagram-node" data-node-id="27" data-x="203.66736107151" data-y="-455.30215431825997"></li>
+      <li class="graph-diagram-node" data-node-id="28" data-x="425.37866931182054" data-y="-341.1866003625877"></li>
+      <li class="graph-diagram-node" data-node-id="29" data-x="558.2336408703292" data-y="-145.69900713175744"></li>
+      <li class="graph-diagram-node" data-node-id="30" data-x="531.5091674507679" data-y="140.44670930570064"></li>
+      <li class="graph-diagram-node" data-node-id="31" data-x="374.00002034505206" data-y="374.949172713751"></li>
+      <li class="graph-diagram-node" data-node-id="32" data-x="105.59660365343672" data-y="403.90381780099966"></li>
+      <li class="graph-diagram-node" data-node-id="33" data-x="-154.17173410448137" data-y="334.1046745504485"></li>
+      <li class="graph-diagram-node" data-node-id="34" data-x="-340.6678624211143" data-y="117.35005592661761"></li>
+      <li class="graph-diagram-node" data-node-id="35" data-x="-265.39417602836056" data-y="-213.21494261655778"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="1"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="5"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="6"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="7"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="11"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="16"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="8" data-to="19"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="20"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="21"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="23"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="25"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="26"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="26"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="27"></li>
+      <li class="graph-diagram-relationship" data-from="8" data-to="27"></li>
+      <li class="graph-diagram-relationship" data-from="8" data-to="28"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="28"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="29"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="29"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="30"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="30"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="31"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="31"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="32"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="32"></li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="33"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="33"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="34"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="34"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="35"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="35"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <table class="relational-table">
+        <caption>departments</caption>
+        <tr>
+          <th>dept_id</th>
+          <th>dept_name</th>
+          <th>parent_dept_id</th>
+        </tr>
+        <tr>
+          <td class="number">1</td>
+          <td>ACME Corp</td>
+          <td class="number">null</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td>Widgets</td>
+          <td class="number">1</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td>Corporate</td>
+          <td class="number">1</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td>Widget marketing</td>
+          <td class="number">2</td>
+        </tr>
+        <tr>
+          <td class="number">5</td>
+          <td>Widget engineering</td>
+          <td class="number">2</td>
+        </tr>
+      </table>
+      <table class="relational-table">
+        <caption>employees</caption>
+        <tr>
+          <th>employee_id</th>
+          <th>dept_id</th>
+          <th>employee_name</th>
+        </tr>
+        <tr>
+          <td class="number">1</td>
+          <td class="number">1</td>
+          <td>John</td>
+        </tr>
+        <tr>
+          <td class="number">2</td>
+          <td class="number">2</td>
+          <td>Mary</td>
+        </tr>
+        <tr>
+          <td class="number">3</td>
+          <td class="number">3</td>
+          <td>Steve</td>
+        </tr>
+        <tr>
+          <td class="number">4</td>
+          <td class="number">3</td>
+          <td>James</td>
+        </tr>
+        <tr>
+          <td class="number">5</td>
+          <td class="number">4</td>
+          <td>David</td>
+        </tr>
+        <tr>
+          <td class="number">6</td>
+          <td class="number">4</td>
+          <td>Liz</td>
+        </tr>
+        <tr>
+          <td class="number">7</td>
+          <td class="number">5</td>
+          <td>Dan</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="slide corporate-structure">
+  <div class="center-outer">
+    <div class="center-inner">
+        <figure class="graph-diagram">
+          <ul class="graph-diagram-markup" data-internal-scale="2.43" data-external-scale="0.5">
+            <li class="graph-diagram-node" data-node-id="0" data-x="-978.0777186601737" data-y="-2353.9079855695177">
+              <span class="graph-diagram-in-node-caption">ACME</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="1" data-x="-769.3054659454913" data-y="-2304.233796822194">
+              <span class="graph-diagram-in-node-caption">Widgets</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="2" data-x="-770.3127285168505" data-y="-2398.100854653879">
+              <span class="graph-diagram-in-node-caption">Corporate</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806">
+              <span class="graph-diagram-in-node-caption">marketing</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152">
+              <span class="graph-diagram-in-node-caption">engineering</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
+              <span class="graph-diagram-in-node-caption">David</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="6" data-x="-561.80152825171" data-y="-2110.3659313107732">
+              <span class="graph-diagram-in-node-caption">Liz</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="7" data-x="-527.9830827713002" data-y="-2506.345081054629">
+              <span class="graph-diagram-in-node-caption">Dan</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="8" data-x="-981.1119845943683" data-y="-2208.804160498788">
+              <span class="graph-diagram-in-node-caption">John</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="9" data-x="-768.4861631628911" data-y="-2148.2946491241446">
+              <span class="graph-diagram-in-node-caption">Mary</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="10" data-x="-709.6832676757999" data-y="-2542.1864224265123">
+              <span class="graph-diagram-in-node-caption">Steve</span>
+            </li>
+            <li class="graph-diagram-node" data-node-id="11" data-x="-829.4020881456611" data-y="-2541.7941899162256">
+              <span class="graph-diagram-in-node-caption">James</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="1" data-to="0">
+              <span class="graph-diagram-relationship-type">parent</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="2" data-to="0">
+              <span class="graph-diagram-relationship-type">parent</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="3" data-to="1">
+              <span class="graph-diagram-relationship-type">parent</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="4" data-to="1">
+              <span class="graph-diagram-relationship-type">parent</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="5" data-to="3">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="6" data-to="3">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="7" data-to="4">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="8" data-to="0">
+              <span class="graph-diagram-relationship-type">owns</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="9" data-to="1">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="10" data-to="2">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+            <li class="graph-diagram-relationship" data-from="11" data-to="2">
+              <span class="graph-diagram-relationship-type">works_in</span>
+            </li>
+          </ul>
+      </figure>
+      <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
+<pre class="query" style="text-align: left; margin-left: 100px">
+start department = node:Department(name='Widgets')
+match employee -[:works_in]-> sub_department
+      -[0..*:parent]-> department
+return employee
+</pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <img src="images/neo-transparent-tag.svg" style="width: 700px; margin-top: 100px">
+  <div style="position: absolute; width: 100%; bottom: 0">
+    <img src="images/customers.png">
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h2>Why do people use Neo4j?</h2>
+      <ul>
+        <li class="slide">Performance: for their problem, significantly faster than any other database technology</li>
+        <li class="slide">Flexibility: store multiple overlapping hierarchies and networks, unconstrained by a fixed schema</li>
+        <li class="slide">Transactions: ensure the consistency required for mission-critical enterprise data</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2 class="top-right-corner" style="width: 300px">logistics</h2>
+  <figure class="graph-diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-925.017987629526 -729.6376594313995 2376.9065297062243 1139.7625425740287"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.93" data-external-scale="1">
+      <li class="graph-diagram-node" data-node-id="0" data-x="-156.84783490661098" data-y="-216.88150669445503">
+        <span class="graph-diagram-in-node-caption">parcel centre</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="1" data-x="437.28640457341885" data-y="-216.15952694577194">
+        <span class="graph-diagram-in-node-caption">parcel centre</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="2" data-x="53.74149972924656" data-y="-345.6899879756055">
+        <span class="graph-diagram-in-node-caption">package network</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="3" data-x="-329.9434675305245" data-y="-346.5187150477488">
+        <span class="graph-diagram-in-node-caption">package network</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="4" data-x="436.3927209152984" data-y="-347.99878727015516">
+        <span class="graph-diagram-in-node-caption">package network</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="5" data-x="-276.06383674335814" data-y="-107.67576807340045">
+        <span class="graph-diagram-in-node-caption">delivery base</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="6" data-x="-345.11037905432033" data-y="44.37079625607305">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="7" data-x="-205.03734400685812" data-y="47.367576967825066">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="8" data-x="-397.4186464401689" data-y="182.44812598063686">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="-46.415025284434336" data-y="-110.15964643144102">
+        <span class="graph-diagram-in-node-caption">delivery base</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="-109.06886234017422" data-y="46.50493012372209">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="11" data-x="32.782550971561655" data-y="42.237365043800864">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="12" data-x="-302.98593817430043" data-y="182.36402080030174">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="-202.87361609336222" data-y="181.81425769893139">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="-105.63619613480266" data-y="181.04812071912167">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="15" data-x="-9.798807256143444" data-y="180.00706018742636">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="16" data-x="85.88931553271566" data-y="180.78852365235124">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="17" data-x="305.40144920181893" data-y="-109.62591112191761">
+        <span class="graph-diagram-in-node-caption">delivery base</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="18" data-x="583.7322926381046" data-y="-110.82398696489852">
+        <span class="graph-diagram-in-node-caption">delivery base</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="19" data-x="231.30410540121983" data-y="37.9013783921793">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="20" data-x="378.7217490520458" data-y="36.07513061853939">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="21" data-x="191.16525200197287" data-y="179.51320697383608">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="22" data-x="286.8929333744225" data-y="178.51359421502173">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="23" data-x="379.5055290067094" data-y="178.63978756301185">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="24" data-x="519.9465696782598" data-y="35.62868058767395">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="25" data-x="476.33767789960086" data-y="177.0191144179746">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="26" data-x="571.9241719896265" data-y="176.85171048035312">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="27" data-x="670.4085710241959" data-y="29.98027613520676">
+        <span class="graph-diagram-in-node-caption">area</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="28" data-x="669.9868908307056" data-y="176.92034340670128">
+        <span class="graph-diagram-in-node-caption">segment</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="1"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="5"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="6"></li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="7"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="11"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="16"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="19"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="20"></li>
+      <li class="graph-diagram-relationship" data-from="19" data-to="21"></li>
+      <li class="graph-diagram-relationship" data-from="19" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="20" data-to="23"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="24" data-to="25"></li>
+      <li class="graph-diagram-relationship" data-from="24" data-to="26"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="27"></li>
+      <li class="graph-diagram-relationship" data-from="27" data-to="28"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <h2 class="top-right-corner" style="width: 300px">asset management & access control</h2>
+  <figure class="graph-diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-277.46564269065857 -928.9933471679688 1823.713079214093 1401.468765258789"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.33" data-external-scale="1">
+      <li class="graph-diagram-node" data-node-id="0" data-x="-165.0117614215478" data-y="-214.840529018775">
+        <span class="graph-diagram-in-node-caption">user</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="1" data-x="102.86204402608084" data-y="-365.80479700762527">
+        <span class="graph-diagram-in-node-caption">group</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="2" data-x="111.6552137790765" data-y="-106.14745634839049">
+        <span class="graph-diagram-in-node-caption">group</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="3" data-x="-163.20302002412032" data-y="-654.2111619074547">
+        <span class="graph-diagram-in-node-caption">user</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="4" data-x="107.00200589975923" data-y="-654.1378279377659">
+        <span class="graph-diagram-in-node-caption">group</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="5" data-x="457.8355832207465" data-y="-366.5299924692708">
+        <span class="graph-diagram-in-node-caption">master</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="6" data-x="453.82860226738717" data-y="-654.882215915766">
+        <span class="graph-diagram-in-node-caption">master</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="7" data-x="465.31202273261135" data-y="-108.21149438843685">
+        <span class="graph-diagram-in-node-caption">customer</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="8" data-x="467.0668982025364" data-y="89.789076496784">
+        <span class="graph-diagram-in-node-caption">account</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="468.75357950540325" data-y="310.92991076017677">
+        <span class="graph-diagram-in-node-caption">subscription</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="700.4414723331744" data-y="-108.97206471378637">
+        <span class="graph-diagram-in-node-caption">customer</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="11" data-x="706.130958499763" data-y="86.58574613413415">
+        <span class="graph-diagram-in-node-caption">subscription</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="12" data-x="707.506360505755" data-y="311.6356526998649">
+        <span class="graph-diagram-in-node-caption">product</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="692.3404091282889" data-y="-367.5730081429156">
+        <span class="graph-diagram-in-node-caption">master</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="918.5743288886274" data-y="-369.6655847076187">
+        <span class="graph-diagram-in-node-caption">master</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="15" data-x="1109.8200518385793" data-y="-48.90523351224732">
+        <span class="graph-diagram-in-node-caption">agreement</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="16" data-x="1118.9830349800259" data-y="311.52390788372253">
+        <span class="graph-diagram-in-node-caption">product</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="1">
+        <span class="graph-diagram-relationship-type">in</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="0" data-to="2">
+        <span class="graph-diagram-relationship-type">in</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="4">
+        <span class="graph-diagram-relationship-type">in</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="6">
+        <span class="graph-diagram-relationship-type">applies to</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="5">
+        <span class="graph-diagram-relationship-type">applies to</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="5" data-to="6">
+        <span class="graph-diagram-relationship-type">inherits</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="7">
+        <span class="graph-diagram-relationship-type">applies to</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="5">
+        <span class="graph-diagram-relationship-type">inherits</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="8">
+        <span class="graph-diagram-relationship-type">has</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="8" data-to="9">
+        <span class="graph-diagram-relationship-type">with</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="11">
+        <span class="graph-diagram-relationship-type">has</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="12">
+        <span class="graph-diagram-relationship-type">with</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="5">
+        <span class="graph-diagram-relationship-type">inherits</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="13" data-to="6">
+        <span class="graph-diagram-relationship-type">inherits</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="6">
+        <span class="graph-diagram-relationship-type">inherits</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="15">
+        <span class="graph-diagram-relationship-type">agreed</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="16">
+        <span class="graph-diagram-relationship-type">specifies</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="16" data-to="12">
+        <span class="graph-diagram-relationship-type">sub-product</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <h2 class="top-left-corner" style="width: 200px">network impact analysis</h2>
+  <figure class="graph-diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" class="graph-diagram pre-sized" height="100%" width="100%" viewBox="-79.15166672497259 -725.266302511501 1592.4500990146537 1583.5859796517402"></svg>
+    <ul class="graph-diagram-markup" data-internal-scale="1.8" data-external-scale="0.5">
+      <li class="graph-diagram-node" data-node-id="0" data-x="390.94890932089857" data-y="-370.7035013952783">
+        <span class="graph-diagram-in-node-caption">customer</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="1" data-x="393.3661019461494" data-y="-254.35870127395467">
+        <span class="graph-diagram-in-node-caption">service</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="2" data-x="408.8592660322794" data-y="228.77346897457548">
+        <span class="graph-diagram-in-node-caption">fiber</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="3" data-x="564.6144529978437" data-y="127.06320232815222">
+        <span class="graph-diagram-in-node-caption">outdoor site</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="4" data-x="406.4924337318416" data-y="329.3121351832064">
+        <span class="graph-diagram-in-node-caption">tube</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="5" data-x="405.04934914500717" data-y="442.0399473089146">
+        <span class="graph-diagram-in-node-caption">cable</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="6" data-x="563.5471794484339" data-y="223.69850022821439">
+        <span class="graph-diagram-in-node-caption">fiber</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="7" data-x="559.9496246165098" data-y="330.7630406762571">
+        <span class="graph-diagram-in-node-caption">tube</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="8" data-x="561.6548436209529" data-y="442.1573820863636">
+        <span class="graph-diagram-in-node-caption">cable</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="9" data-x="256.03711327387737" data-y="130.31414375718686">
+        <span class="graph-diagram-in-node-caption">outdoor site</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="10" data-x="669.6452858718476" data-y="-211.01266043526803">
+        <span class="graph-diagram-in-node-caption">DWDM</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="11" data-x="670.5915767774534" data-y="-93.49197189797748">
+        <span class="graph-diagram-in-node-caption">rack</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="12" data-x="742.0527773217276" data-y="7.98162176033985">
+        <span class="graph-diagram-in-node-caption">room</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="13" data-x="741.5261667970078" data-y="124.71100385180738">
+        <span class="graph-diagram-in-node-caption">main site</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="14" data-x="808.4991290498228" data-y="-211.8470080675103">
+        <span class="graph-diagram-in-node-caption">DWDM</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="15" data-x="808.4097653579859" data-y="-91.97918935104536">
+        <span class="graph-diagram-in-node-caption">rack</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="17" data-x="256.7053033856059" data-y="230.102191637802">
+        <span class="graph-diagram-in-node-caption">fiber</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="18" data-x="257.9517075571496" data-y="334.4539966243575">
+        <span class="graph-diagram-in-node-caption">tube</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="19" data-x="255.14153382836338" data-y="444.6220428556885">
+        <span class="graph-diagram-in-node-caption">cable</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="20" data-x="127.55484128118343" data-y="-209.29788794020922">
+        <span class="graph-diagram-in-node-caption">DWDM</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="21" data-x="127.71285791578" data-y="-96.20956592212764">
+        <span class="graph-diagram-in-node-caption">rack</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="22" data-x="-11.750925958318106" data-y="-209.8903108095413">
+        <span class="graph-diagram-in-node-caption">DWDM</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="23" data-x="-9.072123394102901" data-y="-96.72287038994374">
+        <span class="graph-diagram-in-node-caption">rack</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="24" data-x="58.33905329096927" data-y="-2.141150279973891">
+        <span class="graph-diagram-in-node-caption">room</span>
+      </li>
+      <li class="graph-diagram-node" data-node-id="25" data-x="57.52184420890963" data-y="128.6555798479255">
+        <span class="graph-diagram-in-node-caption">main site</span>
+      </li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="0"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="2" data-to="4"></li>
+      <li class="graph-diagram-relationship" data-from="4" data-to="5"></li>
+      <li class="graph-diagram-relationship" data-from="3" data-to="6"></li>
+      <li class="graph-diagram-relationship" data-from="6" data-to="7"></li>
+      <li class="graph-diagram-relationship" data-from="7" data-to="8"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="9"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="2"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="10"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="11"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="3"></li>
+      <li class="graph-diagram-relationship" data-from="11" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="12" data-to="13"></li>
+      <li class="graph-diagram-relationship" data-from="10" data-to="14"></li>
+      <li class="graph-diagram-relationship" data-from="14" data-to="15"></li>
+      <li class="graph-diagram-relationship" data-from="15" data-to="12"></li>
+      <li class="graph-diagram-relationship" data-from="9" data-to="17"></li>
+      <li class="graph-diagram-relationship" data-from="17" data-to="18"></li>
+      <li class="graph-diagram-relationship" data-from="18" data-to="19"></li>
+      <li class="graph-diagram-relationship" data-from="1" data-to="20"></li>
+      <li class="graph-diagram-relationship" data-from="20" data-to="21"></li>
+      <li class="graph-diagram-relationship" data-from="20" data-to="22"></li>
+      <li class="graph-diagram-relationship" data-from="22" data-to="23"></li>
+      <li class="graph-diagram-relationship" data-from="23" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="21" data-to="24"></li>
+      <li class="graph-diagram-relationship" data-from="24" data-to="25"></li>
+      <li class="graph-diagram-relationship" data-from="20" data-to="9"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <h2><a href="http://neo4j.org/">http://neo4j.org/</a></h2>
+      <h2><a href="http://console.neo4j.org/">http://console.neo4j.org/</a></h2>
+    </div>
+  </div>
+</section>
+
+<section class="slide" style="text-align: left; padding: 20px">
+  <h2>Thanks for listening!</h2>
+  <div style="position: absolute; right: 50px; bottom: 200px; text-align: right">
+    <p>Alistair Jones</p>
+    <p>@apcj</p>
+    <p>alistair.jones@neotechnology.com</p>
+  </div>
+  <img src="images/neo_technology_logo.svg" width="300px" style="position: absolute; right: 50px; bottom: 50px">
+  <img src="images/neo-transparent-tag.svg" width="450px" style="position: absolute; left: 50px; bottom: 50px">
+</section>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+</script>
+<script src="presentation.js"></script>
+
+</body>
+</html>
