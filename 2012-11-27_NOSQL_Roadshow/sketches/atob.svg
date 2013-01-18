@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="graphdiagram" viewBox="-640 -537 1280 1074"><style type="text/css"><![CDATA[body, svg {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+circle.graph-diagram-node {
+    stroke: black;
+    stroke-width: 8px;
+    fill: white;
+}
+
+circle.graph-diagram-node.highlight {
+    stroke: blue;
+}
+
+circle.graph-diagram-node.lowlight {
+    stroke: #555;
+}
+
+path.graph-diagram-relationship, text.graph-diagram-bound-variable, text.graph-diagram-relationship-label {
+    stroke: none;
+    fill: black;
+}
+
+path.graph-diagram-relationship.highlight, text.graph-diagram-bound-variable.highlight, text.graph-diagram-relationship-label.highlight {
+    fill: blue;
+}
+
+path.graph-diagram-relationship.lowlight, text.graph-diagram-bound-variable.lowlight, text.graph-diagram-relationship-label.lowlight {
+    fill: #555;
+}
+
+text.graph-diagram-bound-variable {
+    text-anchor: middle;
+    alignment-baseline: central;
+    font-size: 60px
+}
+
+text.graph-diagram-relationship-label {
+    text-anchor: middle;
+    alignment-baseline: bottom;
+    baseline-shift: 30%;
+    font-size: 50px
+}
+
+]]></style><circle class="graph-diagram-node graph-diagram-node-id-0 undefined" r="50" cx="-250" cy="0"></circle><circle class="graph-diagram-node graph-diagram-node-id-1 undefined" r="50" cx="250" cy="0"></circle><g class="graph-diagram-relationship undefined" transform="translate(-250,0) rotate(0)"><path class="graph-diagram-relationship undefined" d="M 65 4 L 405 4 L 405 15 L 435 0 L 405 -15 L 405 -4 L 65 -4 Z"></path><text class="graph-diagram-relationship-label" x="250" y="0">KNOWS</text></g></svg>
