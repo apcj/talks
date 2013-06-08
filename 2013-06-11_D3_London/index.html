@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+  <meta charset="utf-8">
+  <title>Arrows are Beautiful</title>
+  <link rel="stylesheet" media="screen" href="simple-core.css" type="text/css">
+  <link rel="stylesheet" media="print" href="print-core.css" type="text/css">
+  <link rel="stylesheet" href="lib/arrows/graph-style-chunky.css" type="text/css">
+  <link rel="stylesheet" href="presentation.css" type="text/css">
+  <script src="lib/deck.js/modernizr.custom.js"></script>
+
+  <script src="lib/deck.js/jquery-1.7.2.min.js"></script>
+  <script src="lib/deck.js/core/deck.core.js"></script>
+  <script src="lib/deck.js/extensions/hash/deck.hash.js"></script>
+
+  <script src="lib/arrows/graph-diagram.js"></script>
+  <script src="lib/d3/d3.v3.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push( ['_setAccount', 'UA-9292365-1'] );
+    _gaq.push( ['_trackPageview'] );
+
+    (function ()
+    {
+      var ga = document.createElement( 'script' );
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName( 'script' )[0];
+      s.parentNode.insertBefore( ga, s );
+    })();
+
+  </script>
+</head>
+<body class="deck-container">
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="-56">
+            <span class="caption">1</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="0" data-y="209">
+            <span class="caption">2</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="428" data-y="-56">
+            <span class="caption">me</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="428" data-y="209">
+            <span class="caption">graphs</span>
+          </li>
+          <li class="node" data-node-id="4" data-x="0" data-y="472">
+            <span class="caption">3</span>
+          </li>
+          <li class="node" data-node-id="5" data-x="428" data-y="472">
+            <span class="caption">graph diagrams</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">then</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">talk about</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="3">
+            <span class="type">introduce</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="4">
+            <span class="type">then</span>
+          </li>
+          <li class="relationship" data-from="4" data-to="5">
+            <span class="type">a story about</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram" style="zoom: 70%">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="-34" data-y="453">
+            <span class="caption">me</span><dl class="properties"><dt>name</dt><dd>Alistair Jones</dd><dt>twitter</dt><dd>@apcj</dd></dl></li>
+          <li class="node" data-node-id="1" data-x="436" data-y="828.3092041015625">
+            <span class="caption">Neo Technology</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="436" data-y="225">
+            <span class="caption">Neo4j</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="831" data-y="225">
+            <span class="caption">graph database</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">works for</span><dl class="properties"><dt>since</dt><dd>2011</dd></dl></li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">develops</span>
+          </li>
+          <li class="relationship" data-from="2" data-to="3">
+            <span class="type">is a</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="2">
+            <span class="type">supports</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="2">
+            <span class="type">sells</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram" style="zoom: 70%">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="-521.7413529157639" data-y="392.6088571548462">
+            <span class="caption">property graph model</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="41.351654052734375" data-y="142.7881317138672">
+            <span class="caption">nodes</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="41.351654052734375" data-y="712.440673828125">
+            <span class="caption">relationships</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="580.8923177719116" data-y="392.6088571548462">
+            <span class="caption">properties</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">consists of</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">consists of</span>
+          </li>
+          <li class="relationship" data-from="2" data-to="1">
+            <span class="type">connect</span>
+          </li>
+          <li class="relationship" data-from="2" data-to="3">
+            <span class="type">can have</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="3">
+            <span class="type">can have</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="0">
+            <span class="caption">Neo4j</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="-362" data-y="620">
+            <span class="caption">connected data</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="0" data-y="620">
+            <span class="caption">powerful query language</span><dl class="properties"><dt>name</dt><dd>Cypher</dd></dl></li>
+          <li class="node" data-node-id="3" data-x="356.719482421875" data-y="620">
+            <span class="caption">data modelling</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">great for storing</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">has a</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="3">
+            <span class="type">simplifies</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="-112" data-y="0">
+            <span class="caption">I</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="323" data-y="0">
+            <span class="caption">make some slides</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">need to</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="0">
+            <span class="caption">I</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="245" data-y="-252">
+            <span class="caption">GraphViz</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="328" data-y="223.8828125">
+            <span class="caption">PowerPoint</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="0" data-y="377.86773681640625">
+            <span class="caption">Keynote</span>
+          </li>
+          <li class="node" data-node-id="4" data-x="-344.3487548828125" data-y="196.70895385742188">
+            <span class="caption">OmniGraffle</span>
+          </li>
+          <li class="node" data-node-id="5" data-x="-241.09478759765625" data-y="-230.29104614257812">
+            <span class="caption">Inkscape</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">tried</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">tried</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="3">
+            <span class="type">tried</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="4">
+            <span class="type">tried</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="5">
+            <span class="type">tried</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="657.9523801803589" data-y="321.9490051269531">
+            <span class="caption">seeing structure</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="349" data-y="-288">
+            <span class="caption">force layout</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="349" data-y="321.9490051269531">
+            <span class="caption">fireworks</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="930.0059814453125" data-y="-288">
+            <span class="caption">small graphs</span>
+          </li>
+          <li class="node" data-node-id="4" data-x="930.0059814453125" data-y="-570.8211669921875">
+            <span class="caption">medium graphs</span>
+          </li>
+          <li class="node" data-node-id="5" data-x="930.0059814453125" data-y="-868.8648986816406">
+            <span class="caption">large graphs</span>
+          </li>
+          <li class="node" data-node-id="6" data-x="1487.722900390625" data-y="-288">
+            <span class="caption">manual layout</span>
+          </li>
+          <li class="node" data-node-id="7" data-x="1487.722900390625" data-y="321.9490051269531">
+            <span class="caption">getting your message across</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="0">
+            <span class="type">good for</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="2">
+            <span class="type">good for</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="3">
+            <span class="type">works with</span>
+          </li>
+          <li class="relationship" data-from="1" data-to="4">
+            <span class="type">works with</span>
+          </li>
+          <li class="relationship" data-from="6" data-to="3">
+            <span class="type">works with</span>
+          </li>
+          <li class="relationship" data-from="6" data-to="7">
+            <span class="type">good for</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="0"></li>
+          <li class="node" data-node-id="1" data-x="141" data-y="-114"></li>
+          <li class="node" data-node-id="2" data-x="-28.5" data-y="-199"></li>
+          <li class="node" data-node-id="3" data-x="-156.75" data-y="-80"></li>
+          <li class="node" data-node-id="4" data-x="-156.75" data-y="103"></li>
+          <li class="node" data-node-id="5" data-x="0" data-y="189.5"></li>
+          <li class="node" data-node-id="6" data-x="141" data-y="103"></li>
+          <li class="node" data-node-id="7" data-x="263.6875" data-y="-37"></li>
+          <li class="node" data-node-id="8" data-x="297.96875" data-y="-221.84375"></li>
+          <li class="node" data-node-id="9" data-x="141" data-y="-294.875"></li>
+          <li class="node" data-node-id="10" data-x="-83.390625" data-y="-358.1875"></li>
+          <li class="node" data-node-id="11" data-x="-228.390625" data-y="-221.84375"></li>
+          <li class="node" data-node-id="12" data-x="-308.2109375" data-y="-57"></li>
+          <li class="node" data-node-id="13" data-x="-308.2109375" data-y="142.15625"></li>
+          <li class="node" data-node-id="14" data-x="-200.076171875" data-y="268.15625"></li>
+          <li class="node" data-node-id="15" data-x="-28.5" data-y="338.6484375"></li>
+          <li class="node" data-node-id="16" data-x="263.6875" data-y="232.6484375"></li>
+          <li class="node" data-node-id="17" data-x="460.96875" data-y="479.15625">
+            <span class="caption">yak</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1"></li>
+          <li class="relationship" data-from="1" data-to="2"></li>
+          <li class="relationship" data-from="2" data-to="3"></li>
+          <li class="relationship" data-from="3" data-to="4"></li>
+          <li class="relationship" data-from="4" data-to="5"></li>
+          <li class="relationship" data-from="5" data-to="6"></li>
+          <li class="relationship" data-from="6" data-to="7"></li>
+          <li class="relationship" data-from="7" data-to="8"></li>
+          <li class="relationship" data-from="8" data-to="9"></li>
+          <li class="relationship" data-from="9" data-to="10"></li>
+          <li class="relationship" data-from="10" data-to="11"></li>
+          <li class="relationship" data-from="11" data-to="12"></li>
+          <li class="relationship" data-from="12" data-to="13"></li>
+          <li class="relationship" data-from="13" data-to="14"></li>
+          <li class="relationship" data-from="14" data-to="15"></li>
+          <li class="relationship" data-from="15" data-to="16"></li>
+          <li class="relationship" data-from="16" data-to="17">
+            <span class="type">shave</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide" style="text-align: left; padding: 20px">
+  <h2>Thanks for listening!</h2>
+
+  <div style="position: absolute; right: 50px; bottom: 200px; text-align: right">
+    <p>Alistair Jones</p>
+
+    <p>@apcj</p>
+
+    <p>alistair.jones@neotechnology.com</p>
+  </div>
+  <img src="images/neo_technology_logo.svg" width="300px" style="position: absolute; right: 50px; bottom: 50px">
+  <img src="images/neo-transparent-tag.svg" width="450px" style="position: absolute; left: 50px; bottom: 50px">
+</section>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+</script>
+<script src="presentation.js"></script>
+
+</body>
+</html>
