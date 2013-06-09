@@ -24,10 +24,6 @@ figure {
     display: none;
 }
 
-div.diagram-then-syntax {
-    text-align: center;
-}
-
 div.animation-steps {
     display: none;
 }
@@ -57,96 +53,11 @@ div.center-inner {
     background-color: black;
 }
 
-.top-left-corner {
+.source-note {
     text-align: left;
     position: absolute;
     left: 20px;
-    top: 0;
-    margin: 0px;
+    bottom: 0;
+    margin: 0;
     font-size: 30px;
-}
-
-.top-right-corner {
-    text-align: right;
-    position: absolute;
-    right: 20px;
-    top: 0;
-    margin: 0px;
-    font-size: 30px;
-}
-
-ul li {
-    display: block;
-    margin: 30px;
-}
-
-li.database-category {
-    display: inline-block;
-    width: 400px;
-    margin: 50px;
-    padding: 10px;
-    border: 3px solid white;
-    border-radius: 10px;
-    font-size: 50px;
-}
-
-pre.prettyprint {
-    text-align: left;
-    font-size: 17px;
-}
-
-table.relational-table {
-    display: inline-table;
-    margin: 20px;
-    border-collapse: collapse;
-    font-size: 20px;
-    font-family: monospace;
-}
-
-table.relational-table caption {
-    font-weight: bold;
-    margin: 5px;
-}
-
-table.relational-table td, table.relational-table th {
-    border: 1px solid white;
-    padding: 3px;
-    text-align: left;
-}
-
-table.relational-table td {
-    color: #a7ff5e;
-}
-
-table.relational-table td.number {
-    text-align: right;
-    color: #0095ff;
-}
-
-.recommend-a-friend circle, .recommend-a-friend path {
-    visibility: hidden;
-}
-
-circle.intersection {
-    visibility: hidden;
-    stroke: yellow;
-}
-
-path.intersection {
-    visibility: hidden;
-    fill: yellow;
-}
-
-.corporate-structure .graph-diagram-bound-variable,
-.corporate-structure .graph-diagram-bound-variable-shadow {
-    font-family: monospace;
-    font-size: 40px;
-}
-
-.corporate-structure .graph-diagram-bound-variable {
-    fill: #a7ff5e;
-}
-
-.corporate-structure .graph-diagram-relationship-label {
-    font-size: 40px;
 }
