@@ -23,31 +23,6 @@ div.animation-steps {
     display: none;
 }
 
-p.ascii-art-cypher {
-    font-size: 100px;
-    color: white;
-    font-family: Monaco, monospace;
-}
-
-div.center-outer {
-    width: 100%;
-    height: 100%;
-    display: table;
-}
-
-div.center-inner {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.concern {
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
-    padding: 5px;
-    background-color: black;
-}
-
 .source-note {
     text-align: left;
     position: absolute;
