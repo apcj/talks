@@ -33,6 +33,9 @@
     })();
 
   </script>
+
+  <link rel="stylesheet" href="lib/prism/prism.css">
+
 </head>
 <body class="deck-container">
 
@@ -257,10 +260,10 @@
             <span class="caption">Corporate</span>
           </li>
           <li class="node" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806">
-            <span class="caption">marketing</span>
+            <span class="caption">Marketing</span>
           </li>
           <li class="node" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152">
-            <span class="caption">engineering</span>
+            <span class="caption">Engineering</span>
           </li>
           <li class="node" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
             <span class="caption">David</span>
@@ -319,12 +322,36 @@
         </ul>
       </figure>
       <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
-<pre class="query" style="text-align: left; margin-left: 100px">
-start department = node:Department(name='Widgets')
+<pre><code class="language-sql">start department = node:Department(name='Widgets')
 match employee -[:works_in]-> sub_department
       -[0..*:parent]-> department
-return employee
-</pre>
+return employee</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="4" data-x="0" data-y="472">
+            <span class="caption">3</span>
+          </li>
+          <li class="node" data-node-id="5" data-x="512" data-y="472">
+            <span class="caption">graph diagrams</span>
+          </li>
+          <li class="node" data-node-id="6" data-x="889.3238525390625" data-y="472">
+            <span class="caption">D3</span>
+          </li>
+          <li class="relationship" data-from="4" data-to="5">
+            <span class="type">a story about</span>
+          </li>
+          <li class="relationship" data-from="5" data-to="6">
+            <span class="type">using</span>
+          </li>
+        </ul>
+      </figure>
     </div>
   </div>
 </section>
@@ -628,6 +655,123 @@ return employee
     <div class="center-inner">
       <figure class="graph-diagram">
         <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="3" data-x="494.56146240234375" data-y="-339.5">
+            <span class="caption">D3 data binding</span>
+          </li>
+          <li class="node" data-node-id="6" data-x="927.053466796875" data-y="-339.5">
+            <span class="caption">beginner</span>
+          </li>
+          <li class="relationship" data-from="3" data-to="6">
+            <span class="type">level</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide javascript">
+
+<pre><code class="language-javascript">var circles = view.selectAll("circle.node") // selection query
+  .data(nodes); // nodes is the model
+
+circles.exit().remove();
+
+circles.enter().append("circle") // tag matches selection query
+  .attr("class", "node"); // class matches selection query
+  // other attributes that will not change when the model changes
+
+circles
+  .attr("cx", function(node) { return node.x; })
+  .attr("cy", function(node) { return node.y; })
+  .attr("r", function(node) { return node.radius; });
+  // other attributes that may change when the model changes
+
+</code></pre>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="-208">
+            <span class="caption">data()</span>
+          </li>
+          <li class="node" data-node-id="1" data-x="0" data-y="427.5">
+            <span class="caption">update attributes</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="-422" data-y="1.1798095703125">
+            <span class="caption">append element</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="-422" data-y="427.5">
+            <span class="caption">set attributes</span>
+          </li>
+          <li class="node" data-node-id="4" data-x="364" data-y="1.1798095703125">
+            <span class="caption">remove element</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="1">
+            <span class="type">[existing]</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">enter()</span>
+          </li>
+          <li class="relationship" data-from="2" data-to="3">
+            <span class="type">then</span>
+          </li>
+          <li class="relationship" data-from="3" data-to="1">
+            <span class="type">then</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="4">
+            <span class="type">exit()</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="4" data-x="494.56146240234375" data-y="0">
+            <span class="caption">measuring text</span>
+          </li>
+          <li class="node" data-node-id="7" data-x="927.053466796875" data-y="0">
+            <span class="caption">journeyman</span>
+          </li>
+          <li class="relationship" data-from="4" data-to="7">
+            <span class="type">level</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide javascript">
+
+<pre><code class="language-javascript">textDimensions.measure = function ( text, styleSource ) {
+  var fontSize = styleSource.style( "font-size" );
+  var fontFamily = styleSource.style( "font-family" );
+  var canvasSelection = d3.select("#textMeasuringCanvas").data([this]);
+  canvasSelection.enter().append("canvas")
+    .attr("id", "textMeasuringCanvas");
+
+  var canvas = canvasSelection.node();
+  var context = canvas.getContext("2d");
+  context.font = "normal normal normal " + fontSize + "/normal " + fontFamily;
+  return context.measureText(text).width;
+};</code></pre>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
           <li class="node" data-node-id="3" data-x="0" data-y="-410.6065368652344">
             <span class="caption">model</span>
           </li>
@@ -720,6 +864,147 @@ return employee
   </div>
 </section>
 
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="5" data-x="494.56146240234375" data-y="360.0582275390625">
+            <span class="caption">arrow geometry</span>
+          </li>
+          <li class="node" data-node-id="8" data-x="927.053466796875" data-y="360.0582275390625">
+            <span class="caption">masochist</span>
+          </li>
+          <li class="relationship" data-from="5" data-to="8">
+            <span class="type">level</span>
+          </li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-300 -300 1000 600" style="width: 100%; height: 100%">
+        <circle class="node" fill="none" stroke="black" stroke-width="8" cx="0" cy="0" r="50"></circle>
+        <circle class="node" fill="none" stroke="black" stroke-width="8" cx="300" cy="0" r="100"></circle>
+        <circle class="margin" fill="none" stroke="blue" stroke-width="1" cx="0" cy="0" r="60"></circle>
+        <circle class="margin" fill="none" stroke="blue" stroke-width="1" cx="300" cy="0" r="110"></circle>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 1.8766724351386141,-60.27004314393006 L 13.774172613438852,-58.70495863907231 A 113.26664496266145 113.26664496266145 0 0 1 219.80566291508836,-107.52147831717892 L 214.84044144431977,-104.15301045385908 L 238.2447558391363,-91.02906029742437 L 234.70132732739415,-117.62688190713843 L 229.73610585662556,-114.25841404381859 A 125.26664496266145 125.26664496266145 0 0 0 1.8766724351386141,-60.27004314393006"></path>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 29.49604975454141,-52.59261401449464 L 39.32634857415339,-45.710374181625156 A 105.89340529846147 105.89340529846147 0 0 1 186.69996403290148,-71.7990379451853 L 183.26481353252663,-66.879714715332 L 209.81240745268957,-62.97775917353915 L 197.00541553402607,-86.55700763474522 L 193.57026503365122,-81.63768440489191 A 117.89340529846147 117.89340529846147 0 0 0 29.49604975454141,-52.59261401449464"></path>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 50.44902031350816,-33.02872006916468 L 55.990370420005945,-22.38478099581327 A 151.76726588232998 151.76726588232998 0 0 1 169.9985518529004,-33.03972578059587 L 168.2620027388,-27.29652134628248 L 194.7079187042544,-31.83673375850761 L 175.20819919520164,-50.26933908353607 L 173.47165008110125,-44.52613464922267 A 163.76726588232998 163.76726588232998 0 0 0 50.44902031350816,-33.02872006916468"></path>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 50.44902031350816,33.02872006916468 L 55.990370420005945,22.38478099581327 A 151.76726588232998 151.76726588232998 0 0 0 169.9985518529004,33.03972578059587 L 168.2620027388,27.29652134628248 L 194.7079187042544,31.83673375850761 L 175.20819919520164,50.26933908353607 L 173.47165008110125,44.52613464922267 A 163.76726588232998 163.76726588232998 0 0 1 50.44902031350816,33.02872006916468"></path>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 29.49604975454141,52.59261401449464 L 39.32634857415339,45.710374181625156 A 105.89340529846147 105.89340529846147 0 0 0 186.69996403290148,71.7990379451853 L 183.26481353252663,66.879714715332 L 209.81240745268957,62.97775917353915 L 197.00541553402607,86.55700763474522 L 193.57026503365122,81.63768440489191 A 117.89340529846147 117.89340529846147 0 0 1 29.49604975454141,52.59261401449464"></path>
+        <path class="arrow" stroke="none" stroke-width="8" fill="black"
+              d="M 1.8766724351386141,60.27004314393006 L 13.774172613438852,58.70495863907231 A 113.26664496266145 113.26664496266145 0 0 0 219.80566291508836,107.52147831717892 L 214.84044144431977,104.15301045385908 L 238.2447558391363,91.02906029742437 L 234.70132732739415,117.62688190713843 L 229.73610585662556,114.25841404381859 A 125.26664496266145 125.26664496266145 0 0 1 1.8766724351386141,60.27004314393006"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 13.44778571967425 L 700 -223.48939124601492"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 10.047306899053915 L 700 -166.97667179856256"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 5.304357124251933 L 700 -88.15336363637732"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 -5.304357124251933 L 700 88.15336363637732"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 -10.047306899053915 L 700 166.97667179856256"></path>
+        <path class="homothetic" stroke="blue" stroke-width="1" fill="none"
+              d="M -300 -13.44778571967425 L 700 223.48939124601492"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -60.516914411415826 L 800 44.72095784092792"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -73.24294136039497 L 800 486.8409347585314"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -129.93223423218234 L 800 1406.7241933586768"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 129.93223423218234 L 800 -1406.7241933586768"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 73.24294136039497 L 800 -486.8409347585314"></path>
+        <path class="tangent-start" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 60.516914411415826 L 800 -44.72095784092792"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 41.59741115515217 L 800 -501.13251670821217"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 195.56551274323496 L 800 -950.0782031443742"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 529.188217501161 L 800 -2116.612877408176"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -529.188217501161 L 800 2116.612877408176"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -195.56551274323496 L 800 950.0782031443742"></path>
+        <path class="tangent-end" stroke="blue" stroke-width="1" fill="none"
+              d="M 0 -41.59741115515217 L 800 501.13251670821217"></path>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.07333333333338" cy="-43.932302726715214"
+                r="119.26664496266145"></circle>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.0733333333333" cy="15.021610150313478"
+                r="111.89340529846147"></circle>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.07333333333332" cy="112.2320132859071"
+                r="157.76726588232998"></circle>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.07333333333332" cy="-112.2320132859071"
+                r="157.76726588232998"></circle>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.0733333333333" cy="-15.021610150313478"
+                r="111.89340529846147"></circle>
+        <circle class="arc" stroke="red" stroke-width="1" fill="none" cx="126.07333333333338" cy="43.932302726715214"
+                r="119.26664496266145"></circle>
+        <path stroke="black" stroke-width="8" fill="none" d="M 60 0 L 190 0"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="center-outer">
+    <div class="center-inner">
+      <figure class="graph-diagram">
+        <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+          <li class="node" data-node-id="0" data-x="0" data-y="0">
+            <span class="caption">graphs</span>
+          </li>
+          <li class="node" data-node-id="2" data-x="-409.51220703125" data-y="0">
+            <span class="caption">Neo4j</span>
+          </li>
+          <li class="node" data-node-id="3" data-x="276.067626953125" data-y="406.5">
+            <span class="caption">graph visualisation</span>
+          </li>
+          <li class="node" data-node-id="4" data-x="306.15582275390625" data-y="-380.682373046875">
+            <span class="caption">graph diagramming</span>
+          </li>
+          <li class="node" data-node-id="5" data-x="639.2377319335938" data-y="-521.3286743164062">
+            <span class="caption">apcj/arrows</span><dl class="properties"><dt>state</dt><dd>experimental</dd></dl></li>
+          <li class="node" data-node-id="6" data-x="639.2377319335938" data-y="-207.55517578125">
+            <span class="caption">others?</span>
+          </li>
+          <li class="node" data-node-id="7" data-x="639.2377319335938" data-y="166.64833068847656">
+            <span class="caption">open source</span>
+          </li>
+          <li class="node" data-node-id="8" data-x="639.2377319335938" data-y="636.9063110351562">
+            <span class="caption">commercial</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="2">
+            <span class="type">store</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="3">
+            <span class="type">explore</span>
+          </li>
+          <li class="relationship" data-from="0" data-to="4">
+            <span class="type">draw</span>
+          </li>
+          <li class="relationship" data-from="4" data-to="5"></li>
+          <li class="relationship" data-from="4" data-to="6"></li>
+          <li class="relationship" data-from="3" data-to="7"></li>
+          <li class="relationship" data-from="3" data-to="8"></li>
+        </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section class="slide" style="text-align: left; padding: 20px">
   <h2>Thanks for listening!</h2>
 
@@ -728,11 +1013,10 @@ return employee
   <p>Graph diagram library: <a href="https://github.com/apcj/arrows">https://github.com/apcj/arrows</a></p>
 
   <div style="position: absolute; right: 50px; bottom: 200px; text-align: right">
-    <p>Alistair Jones</p>
-
-    <p>@apcj</p>
-
-    <p>alistair.jones@neotechnology.com</p>
+    <p>
+      Alistair Jones<br>
+      @apcj<br>
+      alistair.jones@neotechnology.com
   </div>
   <div style="left:0; width: 100%; position: absolute; bottom: 0; background-color: rgb(16.862488%,47.058105%,54.902649%)">
     <img src="images/neo-green-tag.svg" width="450px">
@@ -743,6 +1027,7 @@ return employee
 <script>
 </script>
 <script src="presentation.js"></script>
+<script src="lib/prism/prism.js"></script>
 
 </body>
 </html>
