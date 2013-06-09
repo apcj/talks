@@ -534,6 +534,19 @@ gd = {};
                 .attr("viewBox", [box.x, box.y, box.width, box.height].join( " " ));
         };
 
+        scaling.centerOrScaleDiagramToFitWindow = function(layoutModel, view) {
+            var windowDimensions = {
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+            var box = scaling.centeredOrScaledViewBox( windowDimensions, smallestContainingBox( layoutModel ) );
+
+            view
+                .attr("width", windowDimensions.width)
+                .attr("height", windowDimensions.height)
+                .attr("viewBox", [box.x, box.y, box.width, box.height].join( " " ));
+        };
+
         scaling.centerOrScaleDiagramToFitSvgSmooth = function(layoutModel, view) {
             var box = scaling.centeredOrScaledViewBox( viewDimensions(view), smallestContainingBox( layoutModel ) );
 
@@ -1670,7 +1683,9 @@ gd = {};
 
     gd.figure = function ()
     {
-        return function ( selection )
+        var diagram = gd.diagram();
+
+        var figure = function ( selection )
         {
             selection.each( function ()
             {
@@ -1681,8 +1696,16 @@ gd = {};
                     .data( [model] )
                     .enter()
                     .append( "svg" )
-                    .call( gd.diagram() );
+                    .call( diagram );
             } );
-        }
+        };
+
+        figure.scaling = function(scalingFunction)
+        {
+            diagram.scaling(scalingFunction);
+            return figure;
+        };
+
+        return figure;
     };
 })();
