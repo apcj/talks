@@ -609,10 +609,8 @@ return employee</code></pre>
         <span class="type">level</span>
       </li>
       <li class="relationship" data-from="6" data-to="7">
-        <span class="type">harder</span>
       </li>
       <li class="relationship" data-from="7" data-to="8">
-        <span class="type">harder</span>
       </li>
     </ul>
   </figure>
@@ -689,6 +687,97 @@ circles
       </li>
     </ul>
   </figure>
+</section>
+
+<section class="slide javascript">
+
+<pre><code class="language-javascript">var tables = [
+  { rows: [
+    { cells: [ { content: 'A' }, { content: 'B' } ] },
+    { cells: [ { content: 'C' }, { content: 'D' } ] }
+  ] },
+  { rows: [
+    { cells: [ { content: '1' }, { content: '2' }, { content: '3' } ] },
+    { cells: [ { content: '4' }, { content: '5' }, { content: '6' } ] },
+    { cells: [ { content: '7' }, { content: '8' }, { content: '9' } ] }
+  ] }
+];
+
+var tableSelection = d3.select( "#nested_example" ).selectAll( "table" )
+  .data(tables);
+
+tableSelection.exit().remove();
+
+tableSelection.enter().append("table");
+
+var rowSelection = tableSelection.selectAll("tr")
+  .data(function(table) { return table.rows; });
+
+rowSelection.exit().remove();
+
+rowSelection.enter().append("tr");
+
+var cellSelection = rowSelection.selectAll("td")
+  .data(function(row) { return row.cells; });
+
+cellSelection.exit().remove();
+
+cellSelection.enter().append("td");
+
+cellSelection.text(function(cell) { return cell.content; });
+</code></pre>
+
+  <div style="zoom: 2" id="nested_example"></div>
+
+  <script>
+    var tables = [
+      { rows: [
+        { cells: [ { content: 'A' }, { content: 'B' } ] },
+        { cells: [ { content: 'C' }, { content: 'D' } ] }
+      ] },
+      { rows: [
+        { cells: [ { content: '1' }, { content: '2' }, { content: '3' } ] },
+        { cells: [ { content: '4' }, { content: '5' }, { content: '6' } ] },
+        { cells: [ { content: '7' }, { content: '8' }, { content: '9' } ] }
+      ] }
+    ];
+
+    var tableSelection = d3.select( "#nested_example" ).selectAll( "table" )
+        .data(tables);
+
+    tableSelection.exit().remove();
+
+    tableSelection.enter().append("table");
+
+    var rowSelection = tableSelection
+        .style("margin", "20px")
+        .selectAll("tr")
+        .data(function(table) { return table.rows; });
+
+    rowSelection.exit().remove();
+
+    rowSelection.enter().append("tr");
+
+    var cellSelection = rowSelection.selectAll("td")
+        .data(function(row) { return row.cells; });
+
+    cellSelection.exit().remove();
+
+    cellSelection.enter().append("td");
+
+    cellSelection
+        .style("border", "1px solid black")
+        .text(function(cell) { return cell.content; });
+
+  </script>
+</section>
+
+<section class="slide javascript">
+
+<pre><code class="language-javascript">function identity(d) { return d; }
+
+function singleton(d) { return [d]; }
+</code></pre>
 </section>
 
 <section class="slide">
