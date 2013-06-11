@@ -37,5 +37,3 @@ $(function() {
     });
 });
 
-d3.selectAll( "figure.graph-diagram" )
-    .call( gd.figure().scaling(gd.scaling.centerOrScaleDiagramToFitWindow) );

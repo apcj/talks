@@ -12,6 +12,7 @@
   <script src="lib/deck.js/jquery-1.7.2.min.js"></script>
   <script src="lib/deck.js/core/deck.core.js"></script>
   <script src="lib/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="presentation.js"></script>
 
   <script src="lib/arrows/graph-diagram.js"></script>
   <script src="lib/d3/d3.v3.js"></script>
@@ -241,47 +242,56 @@
 </section>
 
 <section class="slide">
-  <figure class="graph-diagram" style="zoom: 0.5">
+  <figure class="graph-diagram corporate-structure" style="zoom: 0.7">
     <ul class="graph-diagram-markup" style="font-size: 10px" data-internal-scale="2.43" data-external-scale="1">
-      <li class="node" data-node-id="0" data-x="-978.0777186601737" data-y="-2353.9079855695177"
-          style="font-size: 30px">
+      <style scoped>
+        .graph-diagram.corporate-structure .node {
+          min-width: 200px;
+        }
+        .graph-diagram.corporate-structure .node, .graph-diagram.corporate-structure  .relationship {
+          font-size: 30px;
+        }
+        .graph-diagram.corporate-structure .node.department {
+          background-color: #fbf4c8;
+        }
+        .graph-diagram.corporate-structure .node.employee {
+          background-color: #8cc9fb;
+        }
+      </style>
+      <li class="node department" data-node-id="0" data-x="-978.0777186601737" data-y="-2353.9079855695177">
         <span class="caption">ACME</span>
       </li>
-      <li class="node" data-node-id="1" data-x="-769.3054659454913" data-y="-2304.233796822194"
-          style="font-size: 30px">
+      <li class="node department result" data-node-id="1" data-x="-769.3054659454913" data-y="-2304.233796822194">
         <span class="caption">Widgets</span>
       </li>
-      <li class="node" data-node-id="2" data-x="-770.3127285168505" data-y="-2398.100854653879"
-          style="font-size: 30px">
+      <li class="node department" data-node-id="2" data-x="-770.3127285168505" data-y="-2398.100854653879">
         <span class="caption">Corporate</span>
       </li>
-      <li class="node" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806"
-          style="font-size: 30px">
+      <li class="node department result" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806">
         <span class="caption">Marketing</span>
       </li>
-      <li class="node" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152"
-          style="font-size: 30px">
+      <li class="node department result" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152">
         <span class="caption">Engineering</span>
       </li>
-      <li class="node" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
+      <li class="node employee result" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
         <span class="caption">David</span>
       </li>
-      <li class="node" data-node-id="6" data-x="-561.80152825171" data-y="-2110.3659313107732">
+      <li class="node employee result" data-node-id="6" data-x="-561.80152825171" data-y="-2110.3659313107732">
         <span class="caption">Liz</span>
       </li>
-      <li class="node" data-node-id="7" data-x="-527.9830827713002" data-y="-2506.345081054629">
+      <li class="node employee result" data-node-id="7" data-x="-527.9830827713002" data-y="-2506.345081054629">
         <span class="caption">Dan</span>
       </li>
-      <li class="node" data-node-id="8" data-x="-981.1119845943683" data-y="-2208.804160498788">
+      <li class="node employee" data-node-id="8" data-x="-981.1119845943683" data-y="-2208.804160498788">
         <span class="caption">John</span>
       </li>
-      <li class="node" data-node-id="9" data-x="-768.4861631628911" data-y="-2148.2946491241446">
+      <li class="node employee result" data-node-id="9" data-x="-768.4861631628911" data-y="-2148.2946491241446">
         <span class="caption">Mary</span>
       </li>
-      <li class="node" data-node-id="10" data-x="-709.6832676757999" data-y="-2542.1864224265123">
+      <li class="node employee" data-node-id="10" data-x="-709.6832676757999" data-y="-2542.1864224265123">
         <span class="caption">Steve</span>
       </li>
-      <li class="node" data-node-id="11" data-x="-829.4020881456611" data-y="-2541.7941899162256">
+      <li class="node employee" data-node-id="11" data-x="-829.4020881456611" data-y="-2541.7941899162256">
         <span class="caption">James</span>
       </li>
       <li class="relationship" data-from="1" data-to="0">
@@ -324,6 +334,36 @@
 match employee -[:works_in]-> sub_department
       -[0..*:parent]-> department
 return employee</code></pre>
+
+  <div class="animation-steps">
+    <ul>
+      <li class="slide" id="query-show-departments"></li>
+      <li class="slide" id="query-show-employees"></li>
+    </ul>
+  </div>
+  <script>
+    (function() {
+      var corporateStructure = d3.select("figure.corporate-structure");
+
+      step("query-show-departments").onEnter(function() {
+        corporateStructure.selectAll("circle.node.department.result")
+            .style("fill", "8E7634");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.department.result")
+                .style("fill", null);
+          });
+
+      step("query-show-employees").onEnter(function() {
+        corporateStructure.selectAll("circle.node.employee.result")
+            .style("fill", "#FB21FB");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.employee.result")
+                .style("fill", null);
+          });
+    })();
+  </script>
 </section>
 
 <section class="slide">
@@ -1059,11 +1099,11 @@ function singleton(d) { return [d]; }
   </div>
 </section>
 
-<!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>
-</script>
-<script src="presentation.js"></script>
 <script src="lib/prism/prism.js"></script>
 
+<script>
+  d3.selectAll( "figure.graph-diagram" )
+      .call( gd.figure().scaling( gd.scaling.centerOrScaleDiagramToFitWindow ) );
+</script>
 </body>
 </html>
