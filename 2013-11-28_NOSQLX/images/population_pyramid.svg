@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500">
+  <style>
+
+    svg {
+    font: 10px sans-serif;
+    }
+
+    .y.axis path {
+    display: none;
+    }
+
+    .y.axis line {
+    stroke: #fff;
+    stroke-opacity: .2;
+    shape-rendering: crispEdges;
+    }
+
+    .y.axis .zero line {
+    stroke: #000;
+    stroke-opacity: 1;
+    }
+
+    .title {
+    font: 300 78px Helvetica Neue;
+    fill: #666;
+    }
+
+    .birthyear,
+    .age {
+    text-anchor: middle;
+    }
+
+    .birthyear {
+    fill: #fff;
+    }
+
+    rect {
+    fill-opacity: .6;
+    fill: #e377c2;
+    }
+
+    rect:first-child {
+    fill: #1f77b4;
+    }
+
+  </style>
+  <g transform="translate(20,20)">
+    <g class="birthyears" transform="translate(189.77777099609375,0)">
+      <g class="birthyear" transform="translate(-1400.3333333333335,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1760</text>
+      </g>
+      <g class="birthyear" transform="translate(-1352.888888888889,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1765</text>
+      </g>
+      <g class="birthyear" transform="translate(-1305.4444444444446,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1770</text>
+      </g>
+      <g class="birthyear" transform="translate(-1258,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1775</text>
+      </g>
+      <g class="birthyear" transform="translate(-1210.5555555555554,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1780</text>
+      </g>
+      <g class="birthyear" transform="translate(-1163.111111111111,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1785</text>
+      </g>
+      <g class="birthyear" transform="translate(-1115.6666666666667,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1790</text>
+      </g>
+      <g class="birthyear" transform="translate(-1068.2222222222224,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1795</text>
+      </g>
+      <g class="birthyear" transform="translate(-1020.7777777777778,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1800</text>
+      </g>
+      <g class="birthyear" transform="translate(-973.3333333333334,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1805</text>
+      </g>
+      <g class="birthyear" transform="translate(-925.8888888888889,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1810</text>
+      </g>
+      <g class="birthyear" transform="translate(-878.4444444444445,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1815</text>
+      </g>
+      <g class="birthyear" transform="translate(-831,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1820</text>
+      </g>
+      <g class="birthyear" transform="translate(-783.5555555555557,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1825</text>
+      </g>
+      <g class="birthyear" transform="translate(-736.1111111111112,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1830</text>
+      </g>
+      <g class="birthyear" transform="translate(-688.6666666666667,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1835</text>
+      </g>
+      <g class="birthyear" transform="translate(-641.2222222222223,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1840</text>
+      </g>
+      <g class="birthyear" transform="translate(-593.7777777777777,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1845</text>
+      </g>
+      <g class="birthyear" transform="translate(-546.3333333333334,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1850</text>
+      </g>
+      <g class="birthyear" transform="translate(-498.8888888888889,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1855</text>
+      </g>
+      <g class="birthyear" transform="translate(-451.44444444444446,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1860</text>
+      </g>
+      <g class="birthyear" transform="translate(-404,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1865</text>
+      </g>
+      <g class="birthyear" transform="translate(-356.5555555555556,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1870</text>
+      </g>
+      <g class="birthyear" transform="translate(-309.11111111111114,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1875</text>
+      </g>
+      <g class="birthyear" transform="translate(-261.6666666666667,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1880</text>
+      </g>
+      <g class="birthyear" transform="translate(-214.22222222222223,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1885</text>
+      </g>
+      <g class="birthyear" transform="translate(-166.7777777777778,0)">
+        <rect x="-23" width="46" y="442.10472782476126" height="7.895272175238745"></rect>
+        <rect x="-23" width="46" y="430.6997668457972" height="19.300233154202772"></rect>
+        <text y="446">1890</text>
+      </g>
+      <g class="birthyear" transform="translate(-119.33333333333334,0)">
+        <rect x="-23" width="46" y="431.7326788961542" height="18.267321103845802"></rect>
+        <rect x="-23" width="46" y="410.43178776392926" height="39.568212236070735"></rect>
+        <text y="446">1895</text>
+      </g>
+      <g class="birthyear" transform="translate(-71.8888888888889,0)">
+        <rect x="-23" width="46" y="410.82738673663783" height="39.172613263362166"></rect>
+        <rect x="-23" width="46" y="375.7728083363134" height="74.2271916636866"></rect>
+        <text y="446">1900</text>
+      </g>
+      <g class="birthyear" transform="translate(-24.44444444444445,0)">
+        <rect x="-23" width="46" y="378.8224281812606" height="71.17757181873941"></rect>
+        <rect x="-23" width="46" y="335.84291445073916" height="114.15708554926084"></rect>
+        <text y="446">1905</text>
+      </g>
+      <g class="birthyear" transform="translate(23,0)">
+        <rect x="-23" width="46" y="339.4777144751813" height="110.5222855248187"></rect>
+        <rect x="-23" width="46" y="296.71686499255264" height="153.28313500744736"></rect>
+        <text y="446">1910</text>
+      </g>
+      <g class="birthyear" transform="translate(70.44444444444446,0)">
+        <rect x="-23" width="46" y="299.42139444415943" height="150.57860555584057"></rect>
+        <rect x="-23" width="46" y="260.6142142332094" height="189.3857857667906"></rect>
+        <text y="446">1915</text>
+      </g>
+      <g class="birthyear" transform="translate(117.8888888888889,0)">
+        <rect x="-23" width="46" y="268.3802757165115" height="181.6197242834885"></rect>
+        <rect x="-23" width="46" y="238.95902823452792" height="211.04097176547208"></rect>
+        <text y="446">1920</text>
+      </g>
+      <g class="birthyear" transform="translate(165.33333333333334,0)">
+        <rect x="-23" width="46" y="237.86791142770144" height="212.13208857229856"></rect>
+        <rect x="-23" width="46" y="211.7577217665679" height="238.2422782334321"></rect>
+        <text y="446">1925</text>
+      </g>
+      <g class="birthyear" transform="translate(212.7777777777778,0)">
+        <rect x="-23" width="46" y="233.28071915553988" height="216.71928084446012"></rect>
+        <rect x="-23" width="46" y="213.69576612284644" height="236.30423387715356"></rect>
+        <text y="446">1930</text>
+      </g>
+      <g class="birthyear" transform="translate(260.22222222222223,0)">
+        <rect x="-23" width="46" y="243.38398199945394" height="206.61601800054606"></rect>
+        <rect x="-23" width="46" y="229.6517589438731" height="220.3482410561269"></rect>
+        <text y="446">1935</text>
+      </g>
+      <g class="birthyear" transform="translate(307.6666666666667,0)">
+        <rect x="-23" width="46" y="229.8604065592571" height="220.1395934407429"></rect>
+        <rect x="-23" width="46" y="219.7369557532985" height="230.2630442467015"></rect>
+        <text y="446">1940</text>
+      </g>
+      <g class="birthyear" transform="translate(355.11111111111114,0)">
+        <rect x="-23" width="46" y="185.00132394872412" height="264.9986760512759"></rect>
+        <rect x="-23" width="46" y="174.08860891018782" height="275.9113910898122"></rect>
+        <text y="446">1945</text>
+      </g>
+      <g class="birthyear" transform="translate(402.5555555555556,0)">
+        <rect x="-23" width="46" y="113.30830163548274" height="336.69169836451726"></rect>
+        <rect x="-23" width="46" y="103.6633287345345" height="346.3366712654655"></rect>
+        <text y="446">1950</text>
+      </g>
+      <g class="birthyear" transform="translate(450,0)">
+        <rect x="-23" width="46" y="77.79690291395059" height="372.2030970860494"></rect>
+        <rect x="-23" width="46" y="69.9131556672354" height="380.0868443327646"></rect>
+        <text y="446">1955</text>
+      </g>
+      <g class="birthyear" transform="translate(497.44444444444446,0)">
+        <rect x="-23" width="46" y="44.431732072999466" height="405.56826792700053"></rect>
+        <rect x="-23" width="46" y="39.474813905922076" height="410.5251860940779"></rect>
+        <text y="446">1960</text>
+      </g>
+      <g class="birthyear" transform="translate(544.8888888888889,0)">
+        <rect x="-23" width="46" y="36.22969569289961" height="413.7703043071004"></rect>
+        <rect x="-23" width="46" y="47.390506088746065" height="402.60949391125394"></rect>
+        <text y="446">1965</text>
+      </g>
+      <g class="birthyear" transform="translate(592.3333333333334,0)">
+        <rect x="-23" width="46" y="84.4378529187075" height="365.5621470812925"></rect>
+        <rect x="-23" width="46" y="100.05664489477891" height="349.9433551052211"></rect>
+        <text y="446">1970</text>
+      </g>
+      <g class="birthyear" transform="translate(639.7777777777777,0)">
+        <rect x="-23" width="46" y="114.27921885220479" height="335.7207811477952"></rect>
+        <rect x="-23" width="46" y="129.93645303952587" height="320.0635469604741"></rect>
+        <text y="446">1975</text>
+      </g>
+      <g class="birthyear" transform="translate(687.2222222222223,0)">
+        <rect x="-23" width="46" y="123.61379216815362" height="326.3862078318464"></rect>
+        <rect x="-23" width="46" y="137.44030306178934" height="312.55969693821066"></rect>
+        <text y="446">1980</text>
+      </g>
+      <g class="birthyear" transform="translate(734.6666666666667,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1985</text>
+      </g>
+      <g class="birthyear" transform="translate(782.1111111111112,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1990</text>
+      </g>
+      <g class="birthyear" transform="translate(829.5555555555557,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">1995</text>
+      </g>
+      <g class="birthyear" transform="translate(877,0)">
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <rect x="-23" width="46" y="450" height="0"></rect>
+        <text y="446">2000</text>
+      </g>
+    </g>
+    <g class="y axis" transform="translate(900,0)">
+      <g class="tick zero" transform="translate(0,450)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">0M</text>
+      </g>
+      <g class="tick" transform="translate(0,411.32574320963846)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">1M</text>
+      </g>
+      <g class="tick" transform="translate(0,372.6514864192769)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">2M</text>
+      </g>
+      <g class="tick" transform="translate(0,333.9772296289153)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">3M</text>
+      </g>
+      <g class="tick" transform="translate(0,295.3029728385538)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">4M</text>
+      </g>
+      <g class="tick" transform="translate(0,256.62871604819225)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">5M</text>
+      </g>
+      <g class="tick" transform="translate(0,217.9544592578307)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">6M</text>
+      </g>
+      <g class="tick" transform="translate(0,179.28020246746917)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">7M</text>
+      </g>
+      <g class="tick" transform="translate(0,140.60594567710757)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">8M</text>
+      </g>
+      <g class="tick" transform="translate(0,101.93168888674603)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">9M</text>
+      </g>
+      <g class="tick" transform="translate(0,63.25743209638449)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">10M</text>
+      </g>
+      <g class="tick" transform="translate(0,24.58317530602295)" style="opacity: 1;">
+        <line x2="-900" y2="0"></line>
+        <text x="3" y="0" dy=".32em" style="text-anchor: start;">11M</text>
+      </g>
+      <path class="domain" d="M-900,0H0V450H-900"></path>
+    </g>
+    <text class="age" x="877" y="454" dy=".71em">0</text>
+    <text class="age" x="829.5555555555557" y="454" dy=".71em">5</text>
+    <text class="age" x="782.1111111111112" y="454" dy=".71em">10</text>
+    <text class="age" x="734.6666666666667" y="454" dy=".71em">15</text>
+    <text class="age" x="687.2222222222223" y="454" dy=".71em">20</text>
+    <text class="age" x="639.7777777777777" y="454" dy=".71em">25</text>
+    <text class="age" x="592.3333333333334" y="454" dy=".71em">30</text>
+    <text class="age" x="544.8888888888889" y="454" dy=".71em">35</text>
+    <text class="age" x="497.44444444444446" y="454" dy=".71em">40</text>
+    <text class="age" x="450" y="454" dy=".71em">45</text>
+    <text class="age" x="402.5555555555556" y="454" dy=".71em">50</text>
+    <text class="age" x="355.11111111111114" y="454" dy=".71em">55</text>
+    <text class="age" x="307.6666666666667" y="454" dy=".71em">60</text>
+    <text class="age" x="260.22222222222223" y="454" dy=".71em">65</text>
+    <text class="age" x="212.7777777777778" y="454" dy=".71em">70</text>
+    <text class="age" x="165.33333333333334" y="454" dy=".71em">75</text>
+    <text class="age" x="117.8888888888889" y="454" dy=".71em">80</text>
+    <text class="age" x="70.44444444444446" y="454" dy=".71em">85</text>
+    <text class="age" x="23" y="454" dy=".71em">90</text>
+  </g>
+</svg>

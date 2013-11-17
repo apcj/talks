@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+  <meta charset="utf-8">
+  <title>Seeing patterns in your data</title>
+  <link rel="stylesheet" media="screen" href="simple-core.css" type="text/css">
+  <link rel="stylesheet" media="print" href="print-core.css" type="text/css">
+  <link rel="stylesheet" href="lib/arrows/graph-style-chunky.css" type="text/css">
+  <link rel="stylesheet" href="presentation.css" type="text/css">
+  <script src="lib/deck.js/modernizr.custom.js"></script>
+
+  <script src="lib/deck.js/jquery-1.7.2.min.js"></script>
+  <script src="lib/deck.js/core/deck.core.js"></script>
+  <script src="lib/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="presentation.js"></script>
+
+  <script src="lib/arrows/graph-diagram.js"></script>
+  <script src="lib/d3/d3.v3.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push( ['_setAccount', 'UA-9292365-1'] );
+    _gaq.push( ['_trackPageview'] );
+
+    (function ()
+    {
+      var ga = document.createElement( 'script' );
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName( 'script' )[0];
+      s.parentNode.insertBefore( ga, s );
+    })();
+
+  </script>
+
+  <link rel="stylesheet" href="lib/prism/prism.css">
+
+</head>
+<body class="deck-container">
+
+<section class="slide">
+  <div class="center">
+    <h1>Seeing Patterns</h1>
+    <h2>in data</h2>
+  </div>
+</section>
+
+<section class="slide white">
+  <img class="center" src="images/population_pyramid.svg">
+  <a class="attribution" href="http://bl.ocks.org/mbostock/4062085"></a>
+</section>
+
+<section class="slide white">
+  <img class="center" src="images/box_plt.svg">
+  <a class="attribution" href="http://bl.ocks.org/mbostock/4061502"></a>
+</section>
+
+<section class="slide white">
+  <img class="fill" src="images/standard-tube-map.svg">
+  <a class="attribution" href="http://www.tfl.gov.uk/assets/downloads/standard-tube-map.pdf‎"></a>
+</section>
+
+<section class="slide" style="text-align: left; padding: 20px">
+  <h2>Thanks for listening!</h2>
+
+  <p>Slides: <a href="http://www.apcjones.com/talks/2013-11-28_NOSQLX/">http://www.apcjones.com/talks/2013-11-28_NOSQLX/</a>
+  </p>
+
+  <div style="position: absolute; bottom: 0; width: 100%; left: 0">
+    <div style="text-align: right; margin: 10px">
+      <p>
+        Alistair Jones<br>
+        @apcj<br>
+        alistair.jones@neotechnology.com
+    </div>
+    <div style="width: 100%; background-color: rgb(16.862488%,47.058105%,54.902649%)">
+      <img src="images/neo-green-tag.svg" width="450px">
+    </div>
+
+  </div>
+</section>
+
+<script src="lib/prism/prism.js"></script>
+
+<script>
+  d3.selectAll( "figure.graph-diagram" )
+      .call( gd.figure().scaling( gd.scaling.centerOrScaleDiagramToFitWindow ) );
+</script>
+</body>
+</html>
