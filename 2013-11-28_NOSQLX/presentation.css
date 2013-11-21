@@ -18,6 +18,18 @@ a.attribution {
     right: 0;
 }
 
+.title-top-left
+{
+    padding: 5px;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    text-transform:uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
 .slide.white
 {
     background-color: white;
@@ -68,4 +80,12 @@ div.animation-steps {
     bottom: 0;
     margin: 0;
     font-size: 30px;
+}
+
+.rel-highlight path {
+    fill: red;
+}
+
+.rel-highlight text {
+    fill: red;
 }
