@@ -2,8 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="box" width="600" height="500">
   <style>
 
-    svg {
+    text {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: white;
     }
 
     .box {
@@ -13,8 +14,8 @@
     .box line,
     .box rect,
     .box circle {
-    fill: #fff;
-    stroke: #000;
+    fill: black;
+    stroke: white;
     stroke-width: 1.5px;
     }
 

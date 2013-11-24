@@ -2,8 +2,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="500">
   <style>
 
-    svg {
-    font: 10px sans-serif;
+    text {
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: white;
     }
 
     .y.axis path {
@@ -17,7 +19,7 @@
     }
 
     .y.axis .zero line {
-    stroke: #000;
+    stroke: white;
     stroke-opacity: 1;
     }
 
@@ -29,10 +31,6 @@
     .birthyear,
     .age {
     text-anchor: middle;
-    }
-
-    .birthyear {
-    fill: #fff;
     }
 
     rect {
@@ -47,136 +45,6 @@
   </style>
   <g transform="translate(20,20)">
     <g class="birthyears" transform="translate(189.77777099609375,0)">
-      <g class="birthyear" transform="translate(-1400.3333333333335,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1760</text>
-      </g>
-      <g class="birthyear" transform="translate(-1352.888888888889,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1765</text>
-      </g>
-      <g class="birthyear" transform="translate(-1305.4444444444446,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1770</text>
-      </g>
-      <g class="birthyear" transform="translate(-1258,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1775</text>
-      </g>
-      <g class="birthyear" transform="translate(-1210.5555555555554,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1780</text>
-      </g>
-      <g class="birthyear" transform="translate(-1163.111111111111,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1785</text>
-      </g>
-      <g class="birthyear" transform="translate(-1115.6666666666667,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1790</text>
-      </g>
-      <g class="birthyear" transform="translate(-1068.2222222222224,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1795</text>
-      </g>
-      <g class="birthyear" transform="translate(-1020.7777777777778,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1800</text>
-      </g>
-      <g class="birthyear" transform="translate(-973.3333333333334,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1805</text>
-      </g>
-      <g class="birthyear" transform="translate(-925.8888888888889,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1810</text>
-      </g>
-      <g class="birthyear" transform="translate(-878.4444444444445,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1815</text>
-      </g>
-      <g class="birthyear" transform="translate(-831,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1820</text>
-      </g>
-      <g class="birthyear" transform="translate(-783.5555555555557,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1825</text>
-      </g>
-      <g class="birthyear" transform="translate(-736.1111111111112,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1830</text>
-      </g>
-      <g class="birthyear" transform="translate(-688.6666666666667,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1835</text>
-      </g>
-      <g class="birthyear" transform="translate(-641.2222222222223,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1840</text>
-      </g>
-      <g class="birthyear" transform="translate(-593.7777777777777,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1845</text>
-      </g>
-      <g class="birthyear" transform="translate(-546.3333333333334,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1850</text>
-      </g>
-      <g class="birthyear" transform="translate(-498.8888888888889,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1855</text>
-      </g>
-      <g class="birthyear" transform="translate(-451.44444444444446,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1860</text>
-      </g>
-      <g class="birthyear" transform="translate(-404,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1865</text>
-      </g>
-      <g class="birthyear" transform="translate(-356.5555555555556,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1870</text>
-      </g>
-      <g class="birthyear" transform="translate(-309.11111111111114,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1875</text>
-      </g>
-      <g class="birthyear" transform="translate(-261.6666666666667,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1880</text>
-      </g>
-      <g class="birthyear" transform="translate(-214.22222222222223,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1885</text>
-      </g>
       <g class="birthyear" transform="translate(-166.7777777777778,0)">
         <rect x="-23" width="46" y="442.10472782476126" height="7.895272175238745"></rect>
         <rect x="-23" width="46" y="430.6997668457972" height="19.300233154202772"></rect>
@@ -271,26 +139,6 @@
         <rect x="-23" width="46" y="123.61379216815362" height="326.3862078318464"></rect>
         <rect x="-23" width="46" y="137.44030306178934" height="312.55969693821066"></rect>
         <text y="446">1980</text>
-      </g>
-      <g class="birthyear" transform="translate(734.6666666666667,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1985</text>
-      </g>
-      <g class="birthyear" transform="translate(782.1111111111112,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1990</text>
-      </g>
-      <g class="birthyear" transform="translate(829.5555555555557,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">1995</text>
-      </g>
-      <g class="birthyear" transform="translate(877,0)">
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <rect x="-23" width="46" y="450" height="0"></rect>
-        <text y="446">2000</text>
       </g>
     </g>
     <g class="y axis" transform="translate(900,0)">
