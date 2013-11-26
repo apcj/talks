@@ -1418,7 +1418,7 @@ gd = {};
                 .attr("cy", field("y"));
 
             function captionClasses(d) {
-                return "caption " + d.node.model.class();
+                return "caption " + d.node.model.class().join(" ");
             }
 
             var captionGroups = view.selectAll("g.caption")
