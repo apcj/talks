@@ -117,6 +117,159 @@
   <a class="attribution" href="http://www.tfl.gov.uk/assets/downloads/standard-tube-map.pdf‎"></a>
 </section>
 
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="-521.7413529157639" data-y="392.6088571548462">
+        <span class="caption">property graph model</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="41.351654052734375" data-y="142.7881317138672">
+        <span class="caption">nodes</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="41.351654052734375" data-y="712.440673828125">
+        <span class="caption">relationships</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="580.8923177719116" data-y="392.6088571548462">
+        <span class="caption">properties</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">consists of</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">consists of</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="1">
+        <span class="type">connect</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="3">
+        <span class="type">can have</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="3">
+        <span class="type">can have</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram corporate-structure" style="zoom: 0.7">
+    <ul class="graph-diagram-markup" style="font-size: 10px" data-internal-scale="2.43" data-external-scale="1">
+      <style scoped>
+        .graph-diagram.corporate-structure .node {
+          min-width: 200px;
+        }
+        .graph-diagram.corporate-structure .node, .graph-diagram.corporate-structure  .relationship {
+          font-size: 30px;
+        }
+      </style>
+      <li class="node department" data-node-id="0" data-x="-978.0777186601737" data-y="-2353.9079855695177">
+        <span class="caption">ACME</span>
+      </li>
+      <li class="node department result" data-node-id="1" data-x="-769.3054659454913" data-y="-2304.233796822194">
+        <span class="caption">Widgets</span>
+      </li>
+      <li class="node department" data-node-id="2" data-x="-770.3127285168505" data-y="-2398.100854653879">
+        <span class="caption">Corporate</span>
+      </li>
+      <li class="node department result" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806">
+        <span class="caption">Marketing</span>
+      </li>
+      <li class="node department result" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152">
+        <span class="caption">Engineering</span>
+      </li>
+      <li class="node employee result" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
+        <span class="caption">David</span>
+      </li>
+      <li class="node employee result" data-node-id="6" data-x="-561.80152825171" data-y="-2110.3659313107732">
+        <span class="caption">Liz</span>
+      </li>
+      <li class="node employee result" data-node-id="7" data-x="-527.9830827713002" data-y="-2506.345081054629">
+        <span class="caption">Dan</span>
+      </li>
+      <li class="node employee" data-node-id="8" data-x="-981.1119845943683" data-y="-2208.804160498788">
+        <span class="caption">John</span>
+      </li>
+      <li class="node employee result" data-node-id="9" data-x="-768.4861631628911" data-y="-2148.2946491241446">
+        <span class="caption">Mary</span>
+      </li>
+      <li class="node employee" data-node-id="10" data-x="-709.6832676757999" data-y="-2542.1864224265123">
+        <span class="caption">Steve</span>
+      </li>
+      <li class="node employee" data-node-id="11" data-x="-829.4020881456611" data-y="-2541.7941899162256">
+        <span class="caption">James</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="0">
+        <span class="type">parent</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="0">
+        <span class="type">parent</span>
+      </li>
+      <li class="relationship" data-from="3" data-to="1">
+        <span class="type">parent</span>
+      </li>
+      <li class="relationship" data-from="4" data-to="1">
+        <span class="type">parent</span>
+      </li>
+      <li class="relationship" data-from="5" data-to="3">
+        <span class="type">works_in</span>
+      </li>
+      <li class="relationship" data-from="6" data-to="3">
+        <span class="type">works_in</span>
+      </li>
+      <li class="relationship" data-from="7" data-to="4">
+        <span class="type">works_in</span>
+      </li>
+      <li class="relationship" data-from="8" data-to="0">
+        <span class="type">owns</span>
+      </li>
+      <li class="relationship" data-from="9" data-to="1">
+        <span class="type">works_in</span>
+      </li>
+      <li class="relationship" data-from="10" data-to="2">
+        <span class="type">works_in</span>
+      </li>
+      <li class="relationship" data-from="11" data-to="2">
+        <span class="type">works_in</span>
+      </li>
+    </ul>
+  </figure>
+  <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
+  <pre><code class="language-sql">start department = node:Department(name='Widgets')
+    match employee -[:works_in]-> sub_department
+    -[0..*:parent]-> department
+    return employee</code></pre>
+
+  <div class="animation-steps">
+    <ul>
+      <li class="slide" id="query-show-departments"></li>
+      <li class="slide" id="query-show-employees"></li>
+    </ul>
+  </div>
+  <script>
+    (function() {
+      var corporateStructure = d3.select("figure.corporate-structure");
+
+      step("query-show-departments").onEnter(function() {
+        corporateStructure.selectAll("circle.node.department.result")
+            .style("fill", "8E7634");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.department.result")
+                .style("fill", null);
+          });
+
+      step("query-show-employees").onEnter(function() {
+        corporateStructure.selectAll("circle.node.employee.result")
+            .style("fill", "#FB21FB");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.employee.result")
+                .style("fill", null);
+          });
+    })();
+  </script>
+</section>
+
 <section class="slide" id="gdb-viz-tools">
   <figure class="graph-diagram gdb-viz-tools">
     <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
@@ -231,12 +384,6 @@
 </section>
 
 <section class="slide">
-  <h2 class="title-top-left">Gephi</h2>
-  <img class="fill-bottom" src="images/gephi.png">
-  <a class="attribution" href="https://gephi.org/"></a>
-</section>
-
-<section class="slide">
   <h2 class="title-top-left">D3</h2>
   <img class="fill" src="images/d3_graph.svg">
   <a class="attribution" href="http://mbostock.github.io/d3/talk/20110921/force.html"></a>
@@ -260,20 +407,6 @@
 
 <section class="slide">
   <div class="center">
-    <img style="width: 100%" src="images/linkurious.png">
-  </div>
-  <a class="attribution" href="http://linkurio.us/try/"></a>
-</section>
-
-<section class="slide">
-  <div class="center">
-    <img style="width: 100%" src="images/graph_alchemist.png">
-  </div>
-  <a class="attribution" href="http://movies.graphalchemist.com/"></a>
-</section>
-
-<section class="slide">
-  <div class="center">
     <img style="width: 100%" src="images/tom_sawyer.png">
   </div>
   <a class="attribution" href="https://www.tomsawyer.com/"></a>
@@ -284,6 +417,28 @@
     <img style="width: 100%" src="images/key_lines.png">
   </div>
   <a class="attribution" href="http://keylines.com/"></a>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Gephi</h2>
+  <div class="center">
+    <img style="width: 100%" src="images/gephi.png">
+  </div>
+  <a class="attribution" href="https://gephi.org/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/linkurious.png">
+  </div>
+  <a class="attribution" href="http://linkurio.us/try/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/graph_alchemist.png">
+  </div>
+  <a class="attribution" href="http://movies.graphalchemist.com/"></a>
 </section>
 
 <section class="slide">
