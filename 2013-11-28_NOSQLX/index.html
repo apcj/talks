@@ -594,7 +594,6 @@ RETURN employee</code></pre>
       var nodes = [];
       var relationships = [];
       var force = d3.layout.force()
-//          .linkDistance(20)
           .size([size, size]);
       var interval;
 
@@ -682,6 +681,12 @@ RETURN employee</code></pre>
 </section>
 
 <section class="slide">
+  <div class="center">
+    <h1>What should I think about when choosing a graph visualisation tool?</h1>
+  </div>
+</section>
+
+<section class="slide">
   <img style="height: 100%" src="images/steam-global.jpg">
   <a class="attribution" href="http://forum.gephi.org/viewtopic.php?t=2314"></a>
 </section>
@@ -706,6 +711,65 @@ RETURN employee</code></pre>
       </tr>
     </table>
   </div>
+</section>
+
+<section class="slide" id="fireworks">
+  <h2 class="title-top-left">Fireworks</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#fireworks' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [{x: size / 2, y: size / 2}];
+      var relationships = [];
+      var force = d3.layout.force()
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("fireworks").onEnter(function() {
+        interval = setInterval(function() {
+          var newNodeCount = Math.random() * 20;
+          var existingNode = nodes[Math.floor( Math.random() * nodes.length )];
+          if (!existingNode) existingNode = nodes[0];
+          var newNode, dieingNode;
+
+          for ( var i = 0; i < newNodeCount; i++ )
+          {
+            newNode = {x: Math.random() * size, y: Math.random() * size};
+            relationships.push({source: newNode, target: existingNode});
+            nodes.push(newNode);
+
+            if (nodes.length > 1000) {
+              dieingNode = nodes[Math.floor( Math.random() * nodes.length )];
+              nodes = nodes.filter(function(n) { return n !== dieingNode });
+              relationships = relationships.filter(function(r) { return r.source !== dieingNode && r.target !== dieingNode });
+            }
+          }
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', d3.hsl(Math.random() * 360, 1, 0.5));
+          force.start();
+         }, 100);
+      }).onExit(function() {
+            clearInterval(interval);
+            nodes = [{x: size / 2, y: size / 2}];
+            relationships = [];
+            canvas.selectAll("circle" ).remove();
+          });
+    })();
+  </script>
 </section>
 
 <section class="slide">
