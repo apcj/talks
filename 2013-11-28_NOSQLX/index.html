@@ -200,54 +200,66 @@
         <span class="caption">James</span>
       </li>
       <li class="relationship" data-from="1" data-to="0">
-        <span class="type">parent</span>
+        <span class="type">PARENT</span>
       </li>
       <li class="relationship" data-from="2" data-to="0">
-        <span class="type">parent</span>
+        <span class="type">PARENT</span>
       </li>
       <li class="relationship" data-from="3" data-to="1">
-        <span class="type">parent</span>
+        <span class="type">PARENT</span>
       </li>
       <li class="relationship" data-from="4" data-to="1">
-        <span class="type">parent</span>
+        <span class="type">PARENT</span>
       </li>
       <li class="relationship" data-from="5" data-to="3">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
       <li class="relationship" data-from="6" data-to="3">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
       <li class="relationship" data-from="7" data-to="4">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
       <li class="relationship" data-from="8" data-to="0">
         <span class="type">owns</span>
       </li>
       <li class="relationship" data-from="9" data-to="1">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
       <li class="relationship" data-from="10" data-to="2">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
       <li class="relationship" data-from="11" data-to="2">
-        <span class="type">works_in</span>
+        <span class="type">WORKS_IN</span>
       </li>
     </ul>
   </figure>
   <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
-  <pre><code class="language-sql">start department = node:Department(name='Widgets')
-match employee -[:works_in]-> sub_department
--[0..*:parent]-> department
-return employee</code></pre>
+  <pre class="query" style="display: none"><code class="language-sql">MATCH  (employee) -[:WORKS_IN]-> (:Department)
+       -[:PARENT*0..]-> (:Department { name: 'Widgets' })
+RETURN employee</code></pre>
 
   <div class="animation-steps">
     <ul>
+      <li class="slide" id="query-show-query"></li>
       <li class="slide" id="query-show-departments"></li>
       <li class="slide" id="query-show-employees"></li>
     </ul>
   </div>
   <script>
     (function() {
+      step("query-show-query" ).onEnter(function() {
+        d3.select(".question")
+            .style("display", "none");
+        d3.select(".query")
+            .style("display", null);
+      } ).onReverse(function() {
+        d3.select(".question")
+            .style("display", null);
+        d3.select(".query")
+            .style("display", "none");
+      });
+
       var corporateStructure = d3.select("figure.corporate-structure");
 
       step("query-show-departments").onEnter(function() {
