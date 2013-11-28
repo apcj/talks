@@ -121,7 +121,7 @@
   <figure class="graph-diagram">
     <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
       <li class="node" data-node-id="0" data-x="-521.7413529157639" data-y="392.6088571548462">
-        <span class="caption">property graph model</span>
+        <span class="caption">Neo4j data model</span>
       </li>
       <li class="node" data-node-id="1" data-x="41.351654052734375" data-y="142.7881317138672">
         <span class="caption">nodes</span>
@@ -235,9 +235,9 @@
   </figure>
   <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
   <pre><code class="language-sql">start department = node:Department(name='Widgets')
-    match employee -[:works_in]-> sub_department
-    -[0..*:parent]-> department
-    return employee</code></pre>
+match employee -[:works_in]-> sub_department
+-[0..*:parent]-> department
+return employee</code></pre>
 
   <div class="animation-steps">
     <ul>
@@ -318,12 +318,10 @@
       var visualisationTools = d3.select("figure.gdb-viz-tools");
 
       step("gdb-viz-tools").onEnter(function() {
-        console.log("enter");
         visualisationTools.selectAll(".viz")
             .style("visibility", "hidden");
 
       }).onExit(function() {
-        console.log("exit");
         visualisationTools.selectAll(".viz")
             .style("visibility", null);
       });
@@ -335,13 +333,13 @@
   <figure class="graph-diagram">
     <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
       <li class="node" data-node-id="0" data-x="0" data-y="0">
-        <span class="caption">Key Lines</span>
+        <span class="caption">Tom Sawyer</span>
       </li>
       <li class="node" data-node-id="1" data-x="133" data-y="360.5">
         <span class="caption">OEM</span>
       </li>
       <li class="node" data-node-id="2" data-x="250.6473388671875" data-y="0">
-        <span class="caption">Tom Sawyer</span>
+        <span class="caption">Key Lines</span>
       </li>
       <li class="node" data-node-id="3" data-x="-196.42529296875" data-y="0">
         <span class="caption">D3</span>
@@ -356,7 +354,7 @@
         <span class="caption">Graph Viz</span>
       </li>
       <li class="node" data-node-id="8" data-x="696.839111328125" data-y="0">
-        <span class="caption">Link urio .us</span>
+        <span class="caption">Link urio.us</span>
       </li>
       <li class="node" data-node-id="9" data-x="974.4425048828125" data-y="0">
         <span class="caption">Graph Alchemist</span>
@@ -389,20 +387,242 @@
   <a class="attribution" href="http://mbostock.github.io/d3/talk/20110921/force.html"></a>
 </section>
 
-<section class="slide">
-  <h1>Charge</h1>
+<section class="slide" id="force_charge">
+  <h2 class="title-top-left">Charge</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_charge' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .gravity(0)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("force_charge").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
 </section>
 
-<section class="slide">
-  <h1>"Gravity"</h1>
+<section class="slide" id="force_gravity">
+  <h2 class="title-top-left">Gravity</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_gravity' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .charge(0)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("force_gravity").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
 </section>
 
-<section class="slide">
-  <h1>Springs</h1>
+<section class="slide" id="charge_force_gravity">
+  <h2 class="title-top-left">Charge + Gravity</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#charge_force_gravity' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("charge_force_gravity").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 100);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
 </section>
 
-<section class="slide">
-  <h1>Fireworks</h1>
+<section class="slide" id="force_springs">
+  <h2 class="title-top-left">Springs</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_springs' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var relationships = [];
+      var force = d3.layout.force()
+          .charge(0)
+          .gravity(0)
+          .linkDistance(100)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+        canvas.selectAll("line" ).data(relationships)
+            .attr("x1", function(relationship) { return relationship.source.x; })
+            .attr("y1", function(relationship) { return relationship.source.y; })
+            .attr("x2", function(relationship) { return relationship.target.x; })
+            .attr("y2", function(relationship) { return relationship.target.y; });
+      });
+
+      step("force_springs").onEnter(function() {
+        interval = setInterval(function() {
+          var newNode = {x: Math.random() * size, y: Math.random() * size};
+          if (nodes.length > 0 && Math.random() > .5) {
+            relationships.push({source: newNode, target:nodes[Math.floor(Math.random() * nodes.length)]});
+          }
+          nodes.push(newNode);
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          canvas.selectAll("line" ).data(relationships)
+              .enter().append("line" )
+              .attr('stroke', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        relationships = [];
+        canvas.selectAll("circle" ).remove();
+        canvas.selectAll("line" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="all_forces">
+  <h2 class="title-top-left">Charge + Gravity + Springs</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#all_forces' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var relationships = [];
+      var force = d3.layout.force()
+//          .linkDistance(20)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+        canvas.selectAll("line" ).data(relationships)
+            .attr("x1", function(relationship) { return relationship.source.x; })
+            .attr("y1", function(relationship) { return relationship.source.y; })
+            .attr("x2", function(relationship) { return relationship.target.x; })
+            .attr("y2", function(relationship) { return relationship.target.y; });
+      });
+
+      step("all_forces").onEnter(function() {
+        interval = setInterval(function() {
+          var newNode = {x: Math.random() * size, y: Math.random() * size};
+          if (nodes.length > 0) {
+            relationships.push({source: newNode, target:nodes[Math.floor(Math.random() * nodes.length)]});
+          }
+          nodes.push(newNode);
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          canvas.selectAll("line" ).data(relationships)
+              .enter().append("line" )
+              .attr('stroke', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        relationships = [];
+        canvas.selectAll("circle" ).remove();
+        canvas.selectAll("line" ).remove();
+      });
+    })();
+  </script>
 </section>
 
 <section class="slide">
