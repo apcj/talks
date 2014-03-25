@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="">
+<head>
+  <meta charset="utf-8">
+  <title>Seeing patterns in your data</title>
+  <link rel="stylesheet" media="screen" href="simple-core.css" type="text/css">
+  <link rel="stylesheet" media="print" href="print-core.css" type="text/css">
+  <link rel="stylesheet" href="lib/arrows/graph-style-chunky.css" type="text/css">
+  <link rel="stylesheet" href="presentation.css" type="text/css">
+  <script src="lib/deck.js/modernizr.custom.js"></script>
+
+  <script src="lib/deck.js/jquery-1.7.2.min.js"></script>
+  <script src="lib/deck.js/core/deck.core.js"></script>
+  <script src="lib/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="presentation.js"></script>
+
+  <script src="lib/arrows/graph-diagram.js"></script>
+  <script src="lib/d3/d3.v3.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push( ['_setAccount', 'UA-9292365-1'] );
+    _gaq.push( ['_trackPageview'] );
+
+    (function ()
+    {
+      var ga = document.createElement( 'script' );
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName( 'script' )[0];
+      s.parentNode.insertBefore( ga, s );
+    })();
+
+  </script>
+
+  <link rel="stylesheet" href="lib/prism/prism.css">
+
+</head>
+<body class="deck-container">
+
+<section class="slide">
+  <div class="center">
+    <h1>Seeing Patterns</h1>
+    <h2>in data</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="-34" data-y="453">
+        <span class="caption">me</span>
+        <dl class="properties">
+          <dt>name</dt>
+          <dd>Alistair Jones</dd>
+          <dt>twitter</dt>
+          <dd>@apcj</dd>
+        </dl>
+      </li>
+      <li class="node" data-node-id="1" data-x="436" data-y="828.3092041015625">
+        <span class="caption">Neo Technology</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="436" data-y="225">
+        <span class="caption">Neo4j</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="831" data-y="225">
+        <span class="caption">graph database</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">works for</span>
+        <dl class="properties">
+          <dt>since</dt>
+          <dd>2011</dd>
+        </dl>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">develops</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="3">
+        <span class="type">is a</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="2">
+        <span class="type">sponsors</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="2">
+        <span class="type">sells</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <h1>What tools are there for graph visualisation?</h1>
+    <h1>What should I think about when choosing a graph visualisation tool?</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <img class="center" src="images/population_pyramid.svg">
+  <a class="attribution" href="http://bl.ocks.org/mbostock/4062085"></a>
+</section>
+
+<section class="slide">
+  <img class="center" src="images/box_plt.svg">
+  <a class="attribution" href="http://bl.ocks.org/mbostock/4061502"></a>
+</section>
+
+<section class="slide">
+  <img class="fill" src="images/visual_display_of_quantitative_information.inline.svg">
+  <a class="attribution" href="http://www.edwardtufte.com/tufte/books_vdqi"></a>
+</section>
+
+<section class="slide">
+  <img class="fill" src="images/standard-tube-map.svg">
+  <a class="attribution" href="http://www.tfl.gov.uk/assets/downloads/standard-tube-map.pdf‎"></a>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="-521.7413529157639" data-y="392.6088571548462">
+        <span class="caption">Neo4j data model</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="41.351654052734375" data-y="142.7881317138672">
+        <span class="caption">nodes</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="41.351654052734375" data-y="712.440673828125">
+        <span class="caption">relationships</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="580.8923177719116" data-y="392.6088571548462">
+        <span class="caption">properties</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">consists of</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">consists of</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="1">
+        <span class="type">connect</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="3">
+        <span class="type">can have</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="3">
+        <span class="type">can have</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram corporate-structure" style="zoom: 0.7">
+    <ul class="graph-diagram-markup" style="font-size: 10px" data-internal-scale="2.43" data-external-scale="1">
+      <style scoped>
+        .graph-diagram.corporate-structure .node {
+          min-width: 200px;
+        }
+        .graph-diagram.corporate-structure .node, .graph-diagram.corporate-structure  .relationship {
+          font-size: 30px;
+        }
+      </style>
+      <li class="node department" data-node-id="0" data-x="-978.0777186601737" data-y="-2353.9079855695177">
+        <span class="caption">ACME</span>
+      </li>
+      <li class="node department result" data-node-id="1" data-x="-769.3054659454913" data-y="-2304.233796822194">
+        <span class="caption">Widgets</span>
+      </li>
+      <li class="node department" data-node-id="2" data-x="-770.3127285168505" data-y="-2398.100854653879">
+        <span class="caption">Corporate</span>
+      </li>
+      <li class="node department result" data-node-id="3" data-x="-524.528086732935" data-y="-2265.8589949038806">
+        <span class="caption">Marketing</span>
+      </li>
+      <li class="node department result" data-node-id="4" data-x="-526.0116221070781" data-y="-2357.035309709152">
+        <span class="caption">Engineering</span>
+      </li>
+      <li class="node employee result" data-node-id="5" data-x="-482.7725493937352" data-y="-2111.3583852430393">
+        <span class="caption">David</span>
+      </li>
+      <li class="node employee result" data-node-id="6" data-x="-561.80152825171" data-y="-2110.3659313107732">
+        <span class="caption">Liz</span>
+      </li>
+      <li class="node employee result" data-node-id="7" data-x="-527.9830827713002" data-y="-2506.345081054629">
+        <span class="caption">Dan</span>
+      </li>
+      <li class="node employee" data-node-id="8" data-x="-981.1119845943683" data-y="-2208.804160498788">
+        <span class="caption">John</span>
+      </li>
+      <li class="node employee result" data-node-id="9" data-x="-768.4861631628911" data-y="-2148.2946491241446">
+        <span class="caption">Mary</span>
+      </li>
+      <li class="node employee" data-node-id="10" data-x="-709.6832676757999" data-y="-2542.1864224265123">
+        <span class="caption">Steve</span>
+      </li>
+      <li class="node employee" data-node-id="11" data-x="-829.4020881456611" data-y="-2541.7941899162256">
+        <span class="caption">James</span>
+      </li>
+      <li class="relationship" data-from="1" data-to="0">
+        <span class="type">PARENT</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="0">
+        <span class="type">PARENT</span>
+      </li>
+      <li class="relationship" data-from="3" data-to="1">
+        <span class="type">PARENT</span>
+      </li>
+      <li class="relationship" data-from="4" data-to="1">
+        <span class="type">PARENT</span>
+      </li>
+      <li class="relationship" data-from="5" data-to="3">
+        <span class="type">WORKS_IN</span>
+      </li>
+      <li class="relationship" data-from="6" data-to="3">
+        <span class="type">WORKS_IN</span>
+      </li>
+      <li class="relationship" data-from="7" data-to="4">
+        <span class="type">WORKS_IN</span>
+      </li>
+      <li class="relationship" data-from="8" data-to="0">
+        <span class="type">owns</span>
+      </li>
+      <li class="relationship" data-from="9" data-to="1">
+        <span class="type">WORKS_IN</span>
+      </li>
+      <li class="relationship" data-from="10" data-to="2">
+        <span class="type">WORKS_IN</span>
+      </li>
+      <li class="relationship" data-from="11" data-to="2">
+        <span class="type">WORKS_IN</span>
+      </li>
+    </ul>
+  </figure>
+  <h3 class="question">Who works in the 'Widgets' department and its sub-departments?</h3>
+  <pre class="query" style="display: none"><code class="language-sql">MATCH  (employee) -[:WORKS_IN]-> (:Department)
+       -[:PARENT*0..]-> (:Department { name: 'Widgets' })
+RETURN employee</code></pre>
+
+  <div class="animation-steps">
+    <ul>
+      <li class="slide" id="query-show-query"></li>
+      <li class="slide" id="query-show-departments"></li>
+      <li class="slide" id="query-show-employees"></li>
+    </ul>
+  </div>
+  <script>
+    (function() {
+      step("query-show-query" ).onEnter(function() {
+        d3.select(".question")
+            .style("display", "none");
+        d3.select(".query")
+            .style("display", null);
+      } ).onReverse(function() {
+        d3.select(".question")
+            .style("display", null);
+        d3.select(".query")
+            .style("display", "none");
+      });
+
+      var corporateStructure = d3.select("figure.corporate-structure");
+
+      step("query-show-departments").onEnter(function() {
+        corporateStructure.selectAll("circle.node.department.result")
+            .style("fill", "8E7634");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.department.result")
+                .style("fill", null);
+          });
+
+      step("query-show-employees").onEnter(function() {
+        corporateStructure.selectAll("circle.node.employee.result")
+            .style("fill", "#FB21FB");
+
+      }).onReverse(function() {
+            corporateStructure.selectAll("circle.node.employee.result")
+                .style("fill", null);
+          });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="gdb-viz-tools">
+  <figure class="graph-diagram gdb-viz-tools">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="0" data-y="0">
+        <span class="caption">Neo4j</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="622.7787170410156" data-y="227">
+        <span class="caption">store</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="622.7787170410156" data-y="-182.5">
+        <span class="caption">query</span>
+      </li>
+      <li class="node viz" data-node-id="3" data-x="0" data-y="-604.3694458007812">
+        <span class="caption">Visualisation tools</span>
+      </li>
+      <li class="node viz" data-node-id="4" data-x="622.7787170410156" data-y="-604.3694458007812">
+        <span class="caption">display</span>
+      </li>
+      <li class="node" data-node-id="5" data-x="1185.2716674804688" data-y="-182.5">
+        <span class="caption">graphs</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">USED TO</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">USED TO</span>
+      </li>
+      <li class="relationship viz" data-from="3" data-to="0">
+        <span class="type">BUILT ON</span>
+      </li>
+      <li class="relationship viz" data-from="3" data-to="4">
+        <span class="type">USED TO</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="5"></li>
+      <li class="relationship viz" data-from="4" data-to="5"></li>
+      <li class="relationship" data-from="1" data-to="5"></li>
+    </ul>
+  </figure>
+  <div class="animation-steps">
+    <ul>
+      <li class="slide" id="show-viz-tools"></li>
+    </ul>
+  </div>
+  <script>
+    (function() {
+      var visualisationTools = d3.select("figure.gdb-viz-tools");
+
+      step("gdb-viz-tools").onEnter(function() {
+        visualisationTools.selectAll(".viz")
+            .style("visibility", "hidden");
+
+      }).onExit(function() {
+        visualisationTools.selectAll(".viz")
+            .style("visibility", null);
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="0" data-y="0">
+        <span class="caption">Tom Sawyer</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="133" data-y="360.5">
+        <span class="caption">OEM</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="250.6473388671875" data-y="0">
+        <span class="caption">Key Lines</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="-196.42529296875" data-y="0">
+        <span class="caption">D3</span>
+      </li>
+      <li class="node" data-node-id="5" data-x="-291.2088928222656" data-y="360.5">
+        <span class="caption">library</span>
+      </li>
+      <li class="node" data-node-id="6" data-x="696.839111328125" data-y="360.5">
+        <span class="caption">Tool</span>
+      </li>
+      <li class="node" data-node-id="7" data-x="-410.98126220703125" data-y="0">
+        <span class="caption">Graph Viz</span>
+      </li>
+      <li class="node" data-node-id="8" data-x="696.839111328125" data-y="0">
+        <span class="caption">Link urio.us</span>
+      </li>
+      <li class="node" data-node-id="9" data-x="974.4425048828125" data-y="0">
+        <span class="caption">Graph Alchemist</span>
+      </li>
+      <li class="node" data-node-id="10" data-x="470.52618408203125" data-y="0">
+        <span class="caption">Gephi</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1"></li>
+      <li class="relationship" data-from="2" data-to="1"></li>
+      <li class="relationship" data-from="5" data-to="1"></li>
+      <li class="relationship" data-from="1" data-to="6"></li>
+      <li class="relationship" data-from="3" data-to="5"></li>
+      <li class="relationship" data-from="7" data-to="5"></li>
+      <li class="relationship" data-from="8" data-to="6"></li>
+      <li class="relationship" data-from="9" data-to="6"></li>
+      <li class="relationship" data-from="10" data-to="6"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Graphviz</h2>
+  <img class="fill" src="images/finite_state_machine.svg">
+  <a class="attribution" href="http://www.graphviz.org/content/fsm"></a>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">D3</h2>
+  <img class="fill" src="images/d3_graph.svg">
+  <a class="attribution" href="http://mbostock.github.io/d3/talk/20110921/force.html"></a>
+</section>
+
+<section class="slide" id="force_charge">
+  <h2 class="title-top-left">Charge</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_charge' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .gravity(0)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("force_charge").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="force_gravity">
+  <h2 class="title-top-left">Gravity</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_gravity' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .charge(0)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("force_gravity").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="charge_force_gravity">
+  <h2 class="title-top-left">Charge + Gravity</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#charge_force_gravity' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var force = d3.layout.force()
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("charge_force_gravity").onEnter(function() {
+        interval = setInterval(function() {
+          nodes.push({x: Math.random() * size, y: Math.random() * size});
+          force.nodes(nodes);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          force.start();
+        }, 100);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        canvas.selectAll("circle" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="force_springs">
+  <h2 class="title-top-left">Springs</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#force_springs' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var relationships = [];
+      var force = d3.layout.force()
+          .charge(0)
+          .gravity(0)
+          .linkDistance(100)
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+        canvas.selectAll("line" ).data(relationships)
+            .attr("x1", function(relationship) { return relationship.source.x; })
+            .attr("y1", function(relationship) { return relationship.source.y; })
+            .attr("x2", function(relationship) { return relationship.target.x; })
+            .attr("y2", function(relationship) { return relationship.target.y; });
+      });
+
+      step("force_springs").onEnter(function() {
+        interval = setInterval(function() {
+          var newNode = {x: Math.random() * size, y: Math.random() * size};
+          if (nodes.length > 0 && Math.random() > .5) {
+            relationships.push({source: newNode, target:nodes[Math.floor(Math.random() * nodes.length)]});
+          }
+          nodes.push(newNode);
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          canvas.selectAll("line" ).data(relationships)
+              .enter().append("line" )
+              .attr('stroke', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        relationships = [];
+        canvas.selectAll("circle" ).remove();
+        canvas.selectAll("line" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide" id="all_forces">
+  <h2 class="title-top-left">Charge + Gravity + Springs</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#all_forces' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [];
+      var relationships = [];
+      var force = d3.layout.force()
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+        canvas.selectAll("line" ).data(relationships)
+            .attr("x1", function(relationship) { return relationship.source.x; })
+            .attr("y1", function(relationship) { return relationship.source.y; })
+            .attr("x2", function(relationship) { return relationship.target.x; })
+            .attr("y2", function(relationship) { return relationship.target.y; });
+      });
+
+      step("all_forces").onEnter(function() {
+        interval = setInterval(function() {
+          var newNode = {x: Math.random() * size, y: Math.random() * size};
+          if (nodes.length > 0) {
+            relationships.push({source: newNode, target:nodes[Math.floor(Math.random() * nodes.length)]});
+          }
+          nodes.push(newNode);
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', 'white');
+          canvas.selectAll("line" ).data(relationships)
+              .enter().append("line" )
+              .attr('stroke', 'white');
+          force.start();
+        }, 200);
+      }).onExit(function() {
+        clearInterval(interval);
+        nodes = [];
+        relationships = [];
+        canvas.selectAll("circle" ).remove();
+        canvas.selectAll("line" ).remove();
+      });
+    })();
+  </script>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/tom_sawyer.png">
+  </div>
+  <a class="attribution" href="https://www.tomsawyer.com/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/key_lines.png">
+  </div>
+  <a class="attribution" href="http://keylines.com/"></a>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Gephi</h2>
+  <div class="center">
+    <img style="width: 100%" src="images/gephi.png">
+  </div>
+  <a class="attribution" href="https://gephi.org/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/linkurious.png">
+  </div>
+  <a class="attribution" href="http://linkurio.us/try/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/graph_alchemist.png">
+  </div>
+  <a class="attribution" href="http://movies.graphalchemist.com/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <img style="width: 100%" src="images/neo4j_browser.png">
+  </div>
+  <a class="attribution" href="http://neo4j.org/"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <h1>What should I think about when choosing a graph visualisation tool?</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <img style="height: 100%" src="images/steam-global.jpg">
+  <a class="attribution" href="http://forum.gephi.org/viewtopic.php?t=2314"></a>
+</section>
+
+<section class="slide">
+  <img style="height: 100%" src="images/centered_graph.svg">
+  <a class="attribution" href="http://forum.gephi.org/viewtopic.php?t=2314"></a>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <table style="width:100%">
+      <tr>
+        <td style="width: 45%"><img style="width: 70%" src="images/steam-global.jpg"></td>
+        <td style="width: 10%"><h2>vs</h2></td>
+        <td style="width: 45%"><img style="width: 70%" src="images/centered_graph.svg"></td>
+      </tr>
+      <tr>
+        <td><h2>Global</h2></td>
+        <td></td>
+        <td><h2>Centered</h2></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="slide" id="fireworks">
+  <h2 class="title-top-left">Fireworks</h2>
+  <script>
+    (function() {
+      var size = 1000;
+      var canvas = d3.select('#fireworks' )
+          .append("svg")
+          .attr("class", "full")
+          .attr("viewBox", [0, 0, size, size].join(" "));
+
+      var nodes = [{x: size / 2, y: size / 2}];
+      var relationships = [];
+      var force = d3.layout.force()
+          .size([size, size]);
+      var interval;
+
+      force.on("tick", function() {
+        canvas.selectAll("circle" ).data(nodes)
+            .attr("cx", function(node) { return node.x; })
+            .attr("cy", function(node) { return node.y; });
+      });
+
+      step("fireworks").onEnter(function() {
+        interval = setInterval(function() {
+          var newNodeCount = Math.random() * 20;
+          var existingNode = nodes[Math.floor( Math.random() * nodes.length )];
+          if (!existingNode) existingNode = nodes[0];
+          var newNode, dieingNode;
+
+          for ( var i = 0; i < newNodeCount; i++ )
+          {
+            newNode = {x: Math.random() * size, y: Math.random() * size};
+            relationships.push({source: newNode, target: existingNode});
+            nodes.push(newNode);
+
+            if (nodes.length > 1000) {
+              dieingNode = nodes[Math.floor( Math.random() * nodes.length )];
+              nodes = nodes.filter(function(n) { return n !== dieingNode });
+              relationships = relationships.filter(function(r) { return r.source !== dieingNode && r.target !== dieingNode });
+            }
+          }
+          force.nodes(nodes);
+          force.links(relationships);
+          canvas.selectAll("circle" ).data(nodes)
+              .enter().append("circle" )
+              .attr('r', 5)
+              .attr('fill', d3.hsl(Math.random() * 360, 1, 0.5));
+          force.start();
+         }, 100);
+      }).onExit(function() {
+            clearInterval(interval);
+            nodes = [{x: size / 2, y: size / 2}];
+            relationships = [];
+            canvas.selectAll("circle" ).remove();
+          });
+    })();
+  </script>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Triadic closure (closing triangles)</h2>
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="0" data-y="0">
+        <span class="caption">DE</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="257" data-y="-228.5">
+        <span class="caption">UK</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="347" data-y="112.75">
+        <span class="caption">RU</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">ENEMY</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">ENEMY</span>
+      </li>
+      <li class="relationship rel-highlight" data-from="2" data-to="1">
+        <span class="type">ALLY</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Similarity</h2>
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="94.1075439453125" data-y="-102">
+        <span class="caption">A</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="-46" data-y="266.5">
+        <span class="caption">1</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="94.1075439453125" data-y="266.5">
+        <span class="caption">2</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="264.55377197265625" data-y="266.5">
+        <span class="caption">3</span>
+      </li>
+      <li class="node" data-node-id="4" data-x="414.77685546875" data-y="266.5">
+        <span class="caption">4</span>
+      </li>
+      <li class="node" data-node-id="5" data-x="264.55377197265625" data-y="-102">
+        <span class="caption">B</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1"></li>
+      <li class="relationship" data-from="0" data-to="2"></li>
+      <li class="relationship" data-from="0" data-to="3"></li>
+      <li class="relationship" data-from="0" data-to="4"></li>
+      <li class="relationship" data-from="5" data-to="1"></li>
+      <li class="relationship" data-from="5" data-to="2"></li>
+      <li class="relationship" data-from="5" data-to="3"></li>
+      <li class="relationship" data-from="5" data-to="4"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <h2 class="title-top-left">Circuits</h2>
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="-53.74629211425781" data-y="170.7888946533203"></li>
+      <li class="node" data-node-id="1" data-x="386.4361267089844" data-y="170.7888946533203"></li>
+      <li class="node" data-node-id="2" data-x="-293.68365478515625" data-y="-299.5"></li>
+      <li class="node" data-node-id="5" data-x="386.4361267089844" data-y="-716.9607543945312"></li>
+      <li class="node" data-node-id="6" data-x="618.7568969726562" data-y="-299.5"></li>
+      <li class="node" data-node-id="7" data-x="-81.19700622558594" data-y="-716.9607543945312"></li>
+      <li class="relationship" data-from="0" data-to="1">
+        <span class="type">BUYS SHARES</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="2">
+        <span class="type">WORKS_FOR</span>
+      </li>
+      <li class="relationship" data-from="5" data-to="6">
+        <span class="type">WORKS_FOR</span>
+      </li>
+      <li class="relationship" data-from="6" data-to="1">
+        <span class="type">OWNS</span>
+      </li>
+      <li class="relationship" data-from="2" data-to="7">
+        <span class="type">WORKS_FOR</span>
+      </li>
+      <li class="relationship" data-from="7" data-to="5">
+        <span class="type">MARRIED_TO</span>
+      </li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <h1>What tools are there for graph visualisation?</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="0" data-y="0">
+        <span class="caption">Tom Sawyer</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="133" data-y="360.5">
+        <span class="caption">OEM</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="250.6473388671875" data-y="0">
+        <span class="caption">Key Lines</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="-196.42529296875" data-y="0">
+        <span class="caption">D3</span>
+      </li>
+      <li class="node" data-node-id="5" data-x="-291.2088928222656" data-y="360.5">
+        <span class="caption">library</span>
+      </li>
+      <li class="node" data-node-id="6" data-x="696.839111328125" data-y="360.5">
+        <span class="caption">Tool</span>
+      </li>
+      <li class="node" data-node-id="7" data-x="-410.98126220703125" data-y="0">
+        <span class="caption">Graph Viz</span>
+      </li>
+      <li class="node" data-node-id="8" data-x="696.839111328125" data-y="0">
+        <span class="caption">Link urio.us</span>
+      </li>
+      <li class="node" data-node-id="9" data-x="974.4425048828125" data-y="0">
+        <span class="caption">Graph Alchemist</span>
+      </li>
+      <li class="node" data-node-id="10" data-x="470.52618408203125" data-y="0">
+        <span class="caption">Gephi</span>
+      </li>
+      <li class="relationship" data-from="0" data-to="1"></li>
+      <li class="relationship" data-from="2" data-to="1"></li>
+      <li class="relationship" data-from="5" data-to="1"></li>
+      <li class="relationship" data-from="1" data-to="6"></li>
+      <li class="relationship" data-from="3" data-to="5"></li>
+      <li class="relationship" data-from="7" data-to="5"></li>
+      <li class="relationship" data-from="8" data-to="6"></li>
+      <li class="relationship" data-from="9" data-to="6"></li>
+      <li class="relationship" data-from="10" data-to="6"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="center">
+    <h1>What should I think about when choosing a graph visualisation tool?</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <figure class="graph-diagram">
+    <ul class="graph-diagram-markup" data-internal-scale="1" data-external-scale="1">
+      <li class="node" data-node-id="0" data-x="61.842529296875" data-y="-34">
+        <span class="caption">global</span>
+      </li>
+      <li class="node" data-node-id="1" data-x="330.77825927734375" data-y="-34">
+        <span class="caption">centered</span>
+      </li>
+      <li class="node" data-node-id="2" data-x="167.28842163085938" data-y="221.71035766601562">
+        <span class="caption">scope</span>
+      </li>
+      <li class="node" data-node-id="3" data-x="167.28842163085938" data-y="614.8382873535156">
+        <span class="caption">graph viz</span>
+      </li>
+      <li class="node" data-node-id="4" data-x="492.12091064453125" data-y="408.75885009765625">
+        <span class="caption">interaction</span>
+      </li>
+      <li class="node" data-node-id="5" data-x="593.0643920898438" data-y="55.45919418334961">
+        <span class="caption">display</span>
+      </li>
+      <li class="node" data-node-id="6" data-x="802.165283203125" data-y="221.71035766601562">
+        <span class="caption">explore</span>
+      </li>
+      <li class="node" data-node-id="7" data-x="-194.79171752929688" data-y="387.44580078125">
+        <span class="caption">integration</span>
+      </li>
+      <li class="node" data-node-id="8" data-x="-378.4655303955078" data-y="55.45919418334961">
+        <span class="caption">OEM</span>
+      </li>
+      <li class="node" data-node-id="9" data-x="-533.7191467285156" data-y="192.27334594726562">
+        <span class="caption">library</span>
+      </li>
+      <li class="node" data-node-id="10" data-x="-194.79171752929688" data-y="31.17717742919922">
+        <span class="caption">tool</span>
+      </li>
+      <li class="relationship" data-from="3" data-to="2"></li>
+      <li class="relationship" data-from="2" data-to="0"></li>
+      <li class="relationship" data-from="2" data-to="1"></li>
+      <li class="relationship" data-from="3" data-to="4"></li>
+      <li class="relationship" data-from="4" data-to="5"></li>
+      <li class="relationship" data-from="4" data-to="6"></li>
+      <li class="relationship" data-from="3" data-to="7"></li>
+      <li class="relationship" data-from="7" data-to="8"></li>
+      <li class="relationship" data-from="7" data-to="9"></li>
+      <li class="relationship" data-from="7" data-to="10"></li>
+    </ul>
+  </figure>
+</section>
+
+<section class="slide" style="text-align: left; padding: 20px">
+  <h2>Thanks for listening!</h2>
+
+  <p>Slides: <a href="http://www.apcjones.com/talks/2013-11-28_NOSQLX/">http://www.apcjones.com/talks/2013-11-28_NOSQLX/</a>
+  </p>
+
+  <div style="position: absolute; bottom: 0; width: 100%; left: 0">
+    <div style="text-align: right; margin: 10px">
+      <p>
+        Alistair Jones<br>
+        @apcj<br>
+        alistair.jones@neotechnology.com
+    </div>
+    <div style="width: 100%; background-color: rgb(16.862488%,47.058105%,54.902649%)">
+      <img src="images/neo-green-tag.svg" width="450px">
+    </div>
+
+  </div>
+</section>
+
+<script src="lib/prism/prism.js"></script>
+
+<script>
+  d3.selectAll( "figure.graph-diagram" )
+      .call( gd.figure().scaling( gd.scaling.centerOrScaleDiagramToFitWindow ) );
+</script>
+</body>
+</html>

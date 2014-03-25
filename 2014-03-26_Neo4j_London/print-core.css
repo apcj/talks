@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+}
+
+section.slide {
+    position: relative;
+    page-break-after: always;
+    width: 1400px;
+    height: 950px;
+    overflow: hidden;
+}
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="box" width="600" height="500">
+  <style>
+
+    text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: white;
+    }
+
+    .box {
+    font: 10px sans-serif;
+    }
+
+    .box line,
+    .box rect,
+    .box circle {
+    fill: black;
+    stroke: white;
+    stroke-width: 1.5px;
+    }
+
+    .box .center {
+    stroke-dasharray: 3,3;
+    }
+
+    .box .outlier {
+    fill: none;
+    stroke: #ccc;
+    }
+
+  </style>
+  <g transform="translate(50,10)">
+    <line class="center" x1="10" y1="437.1604402220211" x2="10" y2="6.59666712544113" style="opacity: 1;"></line>
+    <rect class="box" x="0" y="86.72171148457554" width="20" height="160.73708490155317"></rect>
+    <line class="median" x1="0" y1="167.29702695519072" x2="20" y2="167.29702695519072"></line>
+    <line class="whisker" x1="0" y1="437.1604301452142" x2="20" y2="437.1604301452142" style="opacity: 1;"></line>
+    <line class="whisker" x1="0" y1="6.59666194597865" x2="20" y2="6.59666194597865" style="opacity: 1;"></line>
+    <text class="box" dy=".3em" dx="-6" x="0" y="247.45879638612874" text-anchor="end">833</text>
+    <text class="box" dy=".3em" dx="6" x="20" y="167.29702695519072" text-anchor="start">917</text>
+    <text class="box" dy=".3em" dx="-6" x="0" y="86.72171148457554" text-anchor="end">990</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="437.1604217436447" style="opacity: 1;">645</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="6.5966576275855" style="opacity: 1;">1,061</text>
+  </g>
+  <g transform="translate(170,10)">
+    <line class="center" x1="10" y1="327.7920909045689" x2="10" y2="68.79164752106351" style="opacity: 1;"></line>
+    <rect class="box" x="0" y="179.23651118202397" width="20" height="87.77259536274099"></rect>
+    <line class="median" x1="0" y1="227.46804677369278" x2="20" y2="227.46804677369278"></line>
+    <line class="whisker" x1="0" y1="327.7920909045689" x2="20" y2="327.7920909045689" style="opacity: 1;"></line>
+    <line class="whisker" x1="0" y1="68.79164752106351" x2="20" y2="68.79164752106351" style="opacity: 1;"></line>
+    <text class="box" dy=".3em" dx="-6" x="0" y="267.00369769720027" text-anchor="end">814</text>
+    <text class="box" dy=".3em" dx="6" x="20" y="227.4568185009713" text-anchor="start">851</text>
+    <text class="box" dy=".3em" dx="-6" x="0" y="179.22860200054183" text-anchor="end">897</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="327.79515693584466" style="opacity: 1;">757</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="68.77407211112248" style="opacity: 1;">1,002</text>
+  </g>
+  <g transform="translate(290,10)">
+    <line class="center" x1="10" y1="428.51151885922064" x2="10" y2="49.213426887856244" style="opacity: 1;"></line>
+    <rect class="box" x="0" y="168.5918573504231" width="20" height="116.13660578424415"></rect>
+    <line class="median" x1="0" y1="199.14063080274346" x2="20" y2="199.14063080274346"></line>
+    <line class="whisker" x1="0" y1="428.51151885922064" x2="20" y2="428.51151885922064" style="opacity: 1;"></line>
+    <line class="whisker" x1="0" y1="49.213426887856244" x2="20" y2="49.213426887856244" style="opacity: 1;"></line>
+    <text class="box" dy=".3em" dx="-6" x="0" y="284.72846313466727" text-anchor="end">796</text>
+    <text class="box" dy=".3em" dx="6" x="20" y="199.14063080274346" text-anchor="start">878</text>
+    <text class="box" dy=".3em" dx="-6" x="0" y="168.5918573504231" text-anchor="end">913</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="428.51151885922064" style="opacity: 1;">633</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="49.213426887856244" style="opacity: 1;">1,022</text>
+  </g>
+  <g transform="translate(410,10)">
+    <line class="center" x1="10" y1="432.79572102662246" x2="10" y2="35.732558714962636" style="opacity: 1;"></line>
+    <rect class="box" x="0" y="183.4178186849972" width="20" height="131.34361480173243"></rect>
+    <line class="median" x1="0" y1="234.3490818244047" x2="20" y2="234.3490818244047"></line>
+    <line class="whisker" x1="0" y1="432.79572102662246" x2="20" y2="432.79572102662246" style="opacity: 1;"></line>
+    <line class="whisker" x1="0" y1="35.732558714962636" x2="20" y2="35.732558714962636" style="opacity: 1;"></line>
+    <text class="box" dy=".3em" dx="-6" x="0" y="314.76143348672963" text-anchor="end">769</text>
+    <text class="box" dy=".3em" dx="6" x="20" y="234.3490818244047" text-anchor="start">846</text>
+    <text class="box" dy=".3em" dx="-6" x="0" y="183.4178186849972" text-anchor="end">894</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="432.79572102662246" style="opacity: 1;">656</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="35.732558714962636" style="opacity: 1;">1,036</text>
+  </g>
+  <g transform="translate(530,10)">
+    <line class="center" x1="10" y1="362.5767462572437" x2="10" y2="133.45075604721728" style="opacity: 1;"></line>
+    <rect class="box" x="0" y="213.21940816316052" width="20" height="85.458648338754"></rect>
+    <line class="median" x1="0" y1="251.36325649415463" x2="20" y2="251.36325649415463"></line>
+    <line class="whisker" x1="0" y1="362.5767462572437" x2="20" y2="362.5767462572437" style="opacity: 1;"></line>
+    <line class="whisker" x1="0" y1="133.45075604721728" x2="20" y2="133.45075604721728" style="opacity: 1;"></line>
+    <text class="box" dy=".3em" dx="-6" x="0" y="298.6780565019145" text-anchor="end">784</text>
+    <text class="box" dy=".3em" dx="6" x="20" y="251.36325649415463" text-anchor="start">829</text>
+    <text class="box" dy=".3em" dx="-6" x="0" y="213.21940816316052" text-anchor="end">866</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="362.5767462572437" style="opacity: 1;">723</text>
+    <text class="whisker" dy=".3em" dx="6" x="20" y="133.45075604721728" style="opacity: 1;">942</text>
+  </g>
+</svg>
