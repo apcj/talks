@@ -94,6 +94,7 @@
 <section class="slide">
   <div class="center">
     <h1>What tools are there for graph visualisation?</h1>
+    <h1>How do I integrate graph visualisation into my application?</h1>
     <h1>What should I think about when choosing a graph visualisation tool?</h1>
   </div>
 </section>
@@ -682,6 +683,337 @@ RETURN employee</code></pre>
 
 <section class="slide">
   <div class="center">
+    <h1>How do I integrate graph visualisation into my application?</h1>
+  </div>
+</section>
+
+<section class="slide">
+  <svg class="fill" viewBox="510 230 360 500" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id8" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id15" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id16" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id17" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id18" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id22" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id23" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id24" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id25" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id26" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id27" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+      <marker refX="14.0" refY="7.0" markerUnits="userSpaceOnUse" orient="auto" id="id28" markerHeight="14.0"
+              viewBox="0 0 14.0 14.0" preserveAspectRatio="xMidYMid meet" markerWidth="14.0" overflow="visible">
+        <path fill="#ffffff" d="M7.0 3.5 L14.0 7.0 L7.0 10.5z" stroke-width="1.0" stroke-linejoin="round"
+              stroke-linecap="round" stroke="#ffffff"/>
+      </marker>
+    </defs>
+    <g>
+      <g transform="translate(280.0 130.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M910.0000000000001 889.9999999999998 L0.0 889.9999999999998 L0.0 0.0 L910.0000000000001 0.0 L910.0000000000001 889.9999999999998z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#000000"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id0">
+            <path d="M0 0 L908.0 0 L908.0 888.0 L0 888.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id0)" text-decoration="none" fill="#000000" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal"/>
+        </g>
+      </g>
+      <g transform="translate(520.0 240.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M339.9999999999998 324.9999999999999 Q339.9999999999998 329.9999999999999 334.9999999999998 329.9999999999999 L5.0 329.9999999999999 Q0.0 329.9999999999999 0.0 324.9999999999999 L0.0 5.0 Q0.0 0.0 5.0 0.0 L334.9999999999998 0.0 Q339.9999999999998 0.0 339.9999999999998 5.0 L339.9999999999998 324.9999999999999 L339.9999999999998 324.9999999999999z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#666666"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id1">
+            <path d="M0 0 L338.0 0 L338.0 328.0 L0 328.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id1)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="45.0">Browser</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(530.0 260.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M319.99999999999966 75.00000000000004 Q319.99999999999966 80.00000000000004 314.99999999999966 80.00000000000004 L5.0 80.00000000000004 Q0.0 80.00000000000004 0.0 75.00000000000004 L0.0 5.0 Q0.0 0.0 5.0 0.0 L314.99999999999966 0.0 Q319.99999999999966 0.0 319.99999999999966 5.0 L319.99999999999966 75.00000000000004 L319.99999999999966 75.00000000000004z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#666666"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id2">
+            <path d="M0 0 L318.0 0 L318.0 78.0 L0 78.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id2)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="42.0">&lt;DOM&gt;</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(530.0 350.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M320.0 205.00000000000006 Q320.0 210.00000000000006 315.0 210.00000000000006 L5.0 210.00000000000006 Q0.0 210.00000000000006 0.0 205.00000000000006 L0.0 5.0 Q0.0 0.0 5.0 0.0 L315.0 0.0 Q320.0 0.0 320.0 5.0 L320.0 205.00000000000006 L320.0 205.00000000000006z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#666666"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id3">
+            <path d="M0 0 L318.0 0 L318.0 208.0 L0 208.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id3)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="63.0">{Javascript}</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(540.0 280.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 35.0 Q129.99999999999997 40.0 124.99999999999997 40.0 L5.0 40.0 Q0.0 40.0 0.0 35.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 35.0 L129.99999999999997 35.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id4">
+            <path d="M0 0 L128.0 0 L128.0 38.0 L0 38.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id4)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="48.0">HTML UI</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(710.0 280.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 35.0 Q129.99999999999997 40.0 124.99999999999997 40.0 L5.0 40.0 Q0.0 40.0 0.0 35.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 35.0 L129.99999999999997 35.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id5">
+            <path d="M0 0 L128.0 0 L128.0 38.0 L0 38.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id5)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="49.0">Graph UI</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(540.0 370.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999994 105.0 Q129.99999999999994 110.0 124.99999999999994 110.0 L5.0 110.0 Q0.0 110.0 0.0 105.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999994 0.0 Q129.99999999999994 0.0 129.99999999999994 5.0 L129.99999999999994 105.0 L129.99999999999994 105.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id6">
+            <path d="M0 0 L128.0 0 L128.0 108.0 L0 108.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id6)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="108.0">Browser framework </tspan><tspan x="2.0" xml:space="preserve" y="27.0" textLength="34.0">library</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(710.0 370.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 105.0 Q129.99999999999997 110.0 124.99999999999997 110.0 L5.0 110.0 Q0.0 110.0 0.0 105.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 105.0 L129.99999999999997 105.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id7">
+            <path d="M0 0 L128.0 0 L128.0 108.0 L0 108.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id7)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="108.0">Graph visualisation </tspan><tspan x="2.0" xml:space="preserve" y="27.0" textLength="34.0">library</tspan>
+          </text>
+        </g>
+      </g>
+      <path fill="none" marker-end="url(#id8)" d="M637.5 320.0 L637.5 370.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <g transform="translate(890.0 370.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 45.0 Q129.99999999999997 50.0 124.99999999999997 50.0 L5.0 50.0 Q0.0 50.0 0.0 45.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 45.0 L129.99999999999997 45.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id9">
+            <path d="M0 0 L128.0 0 L128.0 48.0 L0 48.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id9)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="16.0">D3</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(960.0 380.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M49.99999999999998 25.0 Q49.99999999999998 30.0 44.99999999999998 30.0 L5.0 30.0 Q0.0 30.0 0.0 25.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L44.99999999999998 0.0 Q49.99999999999998 0.0 49.99999999999998 5.0 L49.99999999999998 25.0 L49.99999999999998 25.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id10">
+            <path d="M0 0 L48.0 0 L48.0 28.0 L0 28.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id10)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="33.0">layout</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(890.0 430.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 45.0 Q129.99999999999997 50.0 124.99999999999997 50.0 L5.0 50.0 Q0.0 50.0 0.0 45.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 45.0 L129.99999999999997 45.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id11">
+            <path d="M0 0 L128.0 0 L128.0 48.0 L0 48.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id11)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="86.0">Graph UI library</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(530.0 590.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M320.00000000000006 65.0 Q320.00000000000006 70.0 315.00000000000006 70.0 L5.0 70.0 Q0.0 70.0 0.0 65.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L315.00000000000006 0.0 Q320.00000000000006 0.0 320.00000000000006 5.0 L320.00000000000006 65.0 L320.00000000000006 65.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#666666"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id12">
+            <path d="M0 0 L318.0 0 L318.0 68.0 L0 68.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id12)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="100.0">Application Server</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(540.0 610.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M300.00000000000006 25.0 Q300.00000000000006 30.0 295.00000000000006 30.0 L5.0 30.0 Q0.0 30.0 0.0 25.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L295.00000000000006 0.0 Q300.00000000000006 0.0 300.00000000000006 5.0 L300.00000000000006 25.0 L300.00000000000006 25.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id13">
+            <path d="M0 0 L298.0 0 L298.0 28.0 L0 28.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id13)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="133.0">Server Application Code</tspan>
+          </text>
+        </g>
+      </g>
+      <g transform="translate(540.0 680.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M300.00000000000006 35.0 Q300.00000000000006 40.0 295.00000000000006 40.0 L5.0 40.0 Q0.0 40.0 0.0 35.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L295.00000000000006 0.0 Q300.00000000000006 0.0 300.00000000000006 5.0 L300.00000000000006 35.0 L300.00000000000006 35.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id14">
+            <path d="M0 0 L298.0 0 L298.0 38.0 L0 38.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id14)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="72.0">Neo4j Server</tspan>
+          </text>
+        </g>
+      </g>
+      <path fill="none" marker-end="url(#id15)" d="M605.0 370.0 L605.0 320.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id16)" d="M775.0 370.0 L775.0 320.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id17)" d="M807.5 320.0 L807.5 370.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id18)" d="M775.0 510.0 L775.0 480.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <g transform="translate(710.0 510.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 25.0 Q129.99999999999997 30.0 124.99999999999997 30.0 L5.0 30.0 Q0.0 30.0 0.0 25.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 25.0 L129.99999999999997 25.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id19">
+            <path d="M0 0 L128.0 0 L128.0 28.0 L0 28.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id19)" text-decoration="none" fill="#000000" font-family="Times"
+                font-style="normal" font-weight="normal"/>
+        </g>
+      </g>
+      <g transform="translate(540.0 509.99999999999994)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M129.99999999999997 25.0 Q129.99999999999997 30.0 124.99999999999997 30.0 L5.0 30.0 Q0.0 30.0 0.0 25.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L124.99999999999997 0.0 Q129.99999999999997 0.0 129.99999999999997 5.0 L129.99999999999997 25.0 L129.99999999999997 25.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id20">
+            <path d="M0 0 L128.0 0 L128.0 28.000000000000057 L0 28.000000000000057z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id20)" text-decoration="none" fill="#000000" font-family="Times"
+                font-style="normal" font-weight="normal"/>
+        </g>
+      </g>
+      <g transform="translate(540.0 510.0)">
+        <path fill="#000000" fill-opacity="1.0"
+              d="M300.0 25.0 Q300.0 30.0 295.0 30.0 L5.0 30.0 Q0.0 30.0 0.0 25.0 L0.0 5.0 Q0.0 0.0 5.0 0.0 L295.0 0.0 Q300.0 0.0 300.0 5.0 L300.0 25.0 L300.0 25.0z"
+              stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+        <g transform="translate(1.0 1.0)">
+          <clipPath id="id21">
+            <path d="M0 0 L298.0 0 L298.0 28.0 L0 28.0z"/>
+          </clipPath>
+          <text font-size="12" clip-path="url(#id21)" text-decoration="none" fill="#ffffff" font-family="Arial,Arial"
+                font-style="normal" font-weight="normal">
+            <tspan x="2.0" xml:space="preserve" y="13.0" textLength="142.0">Browser Application Code</tspan>
+          </text>
+        </g>
+      </g>
+      <path fill="none" marker-end="url(#id22)" d="M807.5 480.0 L807.5 510.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id23)" d="M637.5 480.0 L637.5 509.99999999999994" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id24)" d="M605.0 509.99999999999994 L605.0 480.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id25)" d="M690.0 610.0 L690.0 540.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id26)" d="M690.0 680.0 L690.0 640.0" stroke-width="1.0"
+            stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id27)" d="M765.0000000000001 540.0 L765.0000000000001 610.0"
+            stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+      <path fill="none" marker-end="url(#id28)" d="M765.0000000000001 640.0 L765.0000000000001 680.0"
+            stroke-width="1.0" stroke-linejoin="round" stroke="#ffffff"/>
+    </g>
+  </svg>
+</section>
+
+<section class="slide">
+  <div class="center">
     <h1>What should I think about when choosing a graph visualisation tool?</h1>
   </div>
 </section>
@@ -975,7 +1307,7 @@ RETURN employee</code></pre>
 <section class="slide" style="text-align: left; padding: 20px">
   <h2>Thanks for listening!</h2>
 
-  <p>Slides: <a href="http://www.apcjones.com/talks/2013-11-28_NOSQLX/">http://www.apcjones.com/talks/2013-11-28_NOSQLX/</a>
+  <p>Slides: <a href="http://www.apcjones.com/talks/2013-11-28_NOSQLX/">http://www.apcjones.com/talks/2014-03-26_Neo4j_London/</a>
   </p>
 
   <div style="position: absolute; bottom: 0; width: 100%; left: 0">
