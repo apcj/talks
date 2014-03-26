@@ -352,7 +352,7 @@ RETURN employee</code></pre>
       <li class="node" data-node-id="1" data-x="133" data-y="360.5">
         <span class="caption">OEM</span>
       </li>
-      <li class="node" data-node-id="2" data-x="133" data-y="-227.76255798339844">
+      <li class="node key-lines" data-node-id="2" data-x="133" data-y="-227.76255798339844">
         <span class="caption">  KeyLines  </span>
       </li>
       <li class="node" data-node-id="3" data-x="-73.8649673461914" data-y="96.23882293701172">
@@ -405,14 +405,27 @@ RETURN employee</code></pre>
   </figure>
   <div class="animation-steps">
     <ul>
+      <li class="slide" id="tools-key-lines"></li>
       <li class="slide" id="tools-show-built-on"></li>
     </ul>
   </div>
   <script>
     (function() {
+      step("tools-key-lines" ).onEnter(function() {
+        var toolsGraph = d3.select("#toolsGraph svg");
+        toolsGraph.selectAll("circle.key-lines")
+            .style("stroke", "yellow");
+        toolsGraph.selectAll("text.key-lines")
+            .style("fill", "yellow");
+      } ).onExit(function() {
+        var toolsGraph = d3.select("#toolsGraph svg");
+        toolsGraph.selectAll("circle.key-lines")
+            .style("stroke", null);
+        toolsGraph.selectAll("text.key-lines")
+            .style("fill", null);
+      });
       step("tools-show-built-on" ).onEnter(function() {
         var toolsGraph = d3.select("#toolsGraph svg");
-        console.log(toolsGraph);
         toolsGraph.selectAll("path.relationship")
             .style("fill", "grey");
         toolsGraph.selectAll("path.relationship.built-on")
@@ -420,7 +433,6 @@ RETURN employee</code></pre>
             .style("display", "inherit");
       } ).onReverse(function() {
         var toolsGraph = d3.select("#toolsGraph svg");
-        console.log(toolsGraph);
         toolsGraph.selectAll("path.relationship")
             .style("fill", "white");
         toolsGraph.selectAll("path.relationship.built-on")
