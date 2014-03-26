@@ -460,6 +460,28 @@ RETURN employee</code></pre>
   <a class="attribution" href="http://mbostock.github.io/d3/talk/20110921/force.html"></a>
 </section>
 
+<section class="slide" style="text-align: left">
+  <h2 class="title-top-left">Sigma JS</h2>
+  <div class="fill" id="sigma-container"></div>
+  <script src="lib/sigma.js-v1.0.1/sigma.min.js"></script>
+  <script src="lib/sigma.js-v1.0.1/plugins/sigma.parsers.gexf.min.js"></script>
+  <script>
+    sigma.parsers.gexf(
+        'images/les-miserables.gexf',
+        { // Here is the ID of the DOM element that
+          // will contain the graph:
+          container: 'sigma-container'
+        },
+        function(s) {
+          // This function will be executed when the
+          // graph is displayed, with "s" the related
+          // sigma instance.
+        }
+    );
+  </script>
+  <a class="attribution" href="http://sigmajs.org/"></a>
+</section>
+
 <section class="slide" id="force_charge">
   <h2 class="title-top-left">Charge</h2>
   <script>
