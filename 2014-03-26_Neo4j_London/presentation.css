@@ -96,3 +96,7 @@ div.animation-steps {
 .rel-highlight text {
     fill: red;
 }
+
+path.built-on {
+    display: none;
+}
