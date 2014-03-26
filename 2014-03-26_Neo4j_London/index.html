@@ -1150,8 +1150,8 @@ RETURN employee</code></pre>
   <div class="animation-steps">
     <ul>
       <li class="slide" id="architecture-highlight-graph-viz"></li>
-      <li class="slide" id="architecture-key-lines"></li>
       <li class="slide" id="architecture-D3"></li>
+      <li class="slide" id="architecture-key-lines"></li>
       <li class="slide" id="architecture-reveal-server"></li>
       <li class="slide" id="architecture-highlight-server-app"></li>
     </ul>
@@ -1171,17 +1171,6 @@ RETURN employee</code></pre>
         diagram.select(".graph-viz text")
             .style("fill", null);
       });
-      step("architecture-key-lines" ).onEnter(function() {
-        diagram.select(".key-lines-logo")
-            .style("display", null);
-        diagram.select(".graph-viz path")
-            .style("fill", "white");
-      } ).onExit(function() {
-        diagram.select(".key-lines-logo")
-            .style("display", "none");
-        diagram.select(".graph-viz path")
-            .style("fill", null);
-      });
       step("architecture-D3" ).onEnter(function() {
         diagram.select(".graph-viz")
             .style("display", "none");
@@ -1196,6 +1185,17 @@ RETURN employee</code></pre>
             .style("display", null);
         diagram.select(".d3")
             .style("display", "none");
+      });
+      step("architecture-key-lines" ).onEnter(function() {
+        diagram.select(".key-lines-logo")
+            .style("display", null);
+        diagram.select(".graph-viz path")
+            .style("fill", "white");
+      } ).onExit(function() {
+        diagram.select(".key-lines-logo")
+            .style("display", "none");
+        diagram.select(".graph-viz path")
+            .style("fill", null);
       });
       step("architecture-reveal-server" ).onEnter(function() {
         diagram.transition().duration(500)
